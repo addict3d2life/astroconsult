@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const stripe = require('stripe')('sk_test_51UOKtkFxXlHis6p5qcOP1tJmglDTGsTxzJ70qrzXELtHFk9ggIMsnZaSZ1vT0OF191VX4klKrv9S3eNUULqnCGNH00OyrjaNRS');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 app.use(express.static('.'));
 app.use(express.json());
