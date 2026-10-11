@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Асцендент Везни в натална карта и при релокация | AstroConsult</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-amber-50/40 via-stone-50 to-amber-50/20 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Навигация -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-200/60 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-wider text-amber-700 uppercase flex items-center gap-2">
+                <span class="text-amber-500 text-xl">✦</span> Astro<span class="text-slate-700">Consult</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-10 text-base font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">Начало</a>
+                
+                <!-- Падащо меню за Услуги -->
+                <div class="relative group py-4">
+                    <a href="index.html#services" class="hover:text-amber-700 transition flex items-center gap-1.5 py-2">
+                        Услуги
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 w-72 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="godishen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Годишен хороскоп</a>
+                        <a href="karmichen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп</a>
+                        <a href="karmichen-i-prognoza.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп и прогноза</a>
+                        <a href="partnerski-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Партньорски хороскоп</a>
+                        <a href="horoskop-6-meseca.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Хороскоп за 6 месеца</a>
+                    </div>
+                </div>
+
+                <a href="za-men.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">За мен</a>
+
+                <!-- Падащо меню за Интересно -->
+                <div class="relative group py-4">
+                    <button class="text-amber-700 transition flex items-center gap-1.5 cursor-pointer py-2 font-bold">
+                        Интересно
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 w-64 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="astrologiya.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Астрология</a>
+                        <a href="lubopitno.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Любопитно</a>
+                        <a href="ascedent-i-relokacii.html" class="block px-5 py-3 text-sm text-amber-800 bg-amber-50 transition font-bold">Асцедент и релокации</a>
+                        <a href="tarot.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Карти Таро</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="cart.html" class="relative bg-amber-50 hover:bg-amber-100 text-amber-900 px-4 py-2.5 rounded-full font-semibold text-sm flex items-center space-x-2 transition border border-amber-300 shadow-xs cursor-pointer no-underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span class="hidden sm:inline">Количка</span>
+                    <span id="cart-count-top" class="bg-amber-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+                </a>
+
+                <!-- Бутон за мобилно меню (Бургер) -->
+                <button onclick="toggleMobileMenu()" class="md:hidden bg-amber-50 hover:bg-amber-100 text-amber-900 p-2.5 rounded-full border border-amber-300 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобилно меню (скрито по подразбиране) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-amber-200 px-6 py-4 space-y-3 shadow-lg">
+        <a href="index.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5">Начало</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Услуги:</p>
+            <a href="godishen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Годишен хороскоп</a>
+            <a href="karmichen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп</a>
+            <a href="karmichen-i-prognoza.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп и прогноза</a>
+            <a href="partnerski-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Партньорски хороскоп</a>
+            <a href="horoskop-6-meseca.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Хороскоп за 6 месеца</a>
+        </div>
+        <a href="za-men.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5 border-t border-amber-100 pt-2">За мен</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Интересно:</p>
+            <a href="astrologiya.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Астрология</a>
+            <a href="lubopitno.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Любопитно</a>
+            <a href="ascedent-i-relokacii.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Асцедент и релокации</a>
+            <a href="tarot.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Карти Таро</a>
+        </div>
+    </div>
+
+    <!-- Съдържание на статията -->
+    <main class="flex-grow py-16 px-4 max-w-4xl mx-auto">
+        <article class="bg-white border border-amber-200/80 rounded-3xl p-8 sm:p-12 shadow-xl">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="bg-amber-100 text-amber-800 font-semibold text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-amber-300">Асцедент Везни</span>
+                <span class="text-slate-400 text-sm">~ 12 мин четене</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">Асцендент Везни в натална карта и при релокация</h1>
+            
+            <div class="h-48 bg-gradient-to-br from-amber-500/10 via-amber-200/20 to-amber-600/10 flex items-center justify-center border border-amber-200 rounded-2xl mb-8">
+                <span class="text-7xl text-amber-700 font-serif">♎</span>
+            </div>
+
+            <div class="prose max-w-none text-slate-600 space-y-6 text-lg leading-relaxed">
+                <p>
+                    С този Асцендент вие ще развиете усет за красота, изящество и дипломация. Ако се стремите към реализация, в която можете да включите всички гореизброени качества, този Асцендент ще се окаже особено полезен за вас.
+                </p>
+
+                <p class="bg-amber-50/70 border border-amber-200/80 p-5 rounded-2xl text-slate-700">
+                    Ще развиете усет към вид справедливост; все повече ще се вслушвате в думите на отсрещната страна и <span class="text-amber-700 font-semibold">ще се стремите да балансирате между вашето мнение, интереси и тези на отсрещната страна.</span>
+                </p>
+
+                <p>
+                    Развива се желание да сте обществено по-активни, да се занимавате с подобни теми, както и да си сътрудничите.
+                </p>
+
+                <p>
+                    Вероятността с този Асцендент да намирате начини да просперирате или да се облагодетелствате чрез вид подкрепа нараства в пъти.
+                </p>
+
+                <p>
+                    Същевременно партньорските отношения (лични или делови) придобиват подчертано важно значение. Ако нямате човек до себе си, който да ви подкрепя, тогава вие често ще се чувствате непълноценни или направо нещастни. Вероятно ще полагате много усилия, за да се харесате и да получите вид одобрение от важни за вас хора – приоритетно партньори, но не само. Ако вашите желания и намерения не кореспондират с тези на околните, тогава може да губите мотивация за действие в избраното направление. Този Асцендент в негативен аспект може да ви направи твърде зависими от другите – до степен на уязвимост и липса на самостоятелност, както и да доведе до колебливост между различни тези и истини и съответно трудно вземане на решения.
+                </p>
+
+                <p>
+                    С този Асцендент вие ще сте закриляни от Венера – тоест с по-голяма лекота ще привличате желаното, дори и само като разчитате на чара и обаянието си. Но до каква степен Венера ще ви закриля все пак зависи и от това в кой дом и знак се намира тя, как е аспектирана и т.н.
+                </p>
+
+                <h2 class="text-3xl font-bold text-slate-900 pt-6 border-t border-amber-200/60">Венера по домове при Асцендент Везни</h2>
+
+                <!-- 1 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Венера в 1 дом</h3>
+                    <p class="text-slate-600">С това положение на Венера вие определено ще развиете усет към красота, добри маниери и изящество. По един естествен начин ще се усили желанието ви да се усъвършенствате и ще полагате усилия в тази посока, може дори да промените нещо във външния си вид, модни предпочитания и т.н. Каквото и да е, крайният резултат често ще бъде, че вие с по-голяма лекота ще привличате внимание, ще печелите симпатии и одобрение, ще привличате онова, което най-силно желаете. Ако Венера е добре аспектирана, тогава вие ще получавате силна опека от тази планета, наричана още „малкото щастие“, но всъщност нейното значение е огромно, защото чрез нея привличаме земни блага като физическа красота, материални облаги и т.н., но също и всичко, което най-силно желаем. Все пак фокусът ще е силно върху самите вас и трябва да внимавате тази концентрация да не ви направи самовлюбени и дори егоисти. При напрегнати аспекти може да злоупотребявате с всичко, което ви се дава, и в крайна сметка да го изгубите.</p>
+                </div>
+
+                <!-- 2 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Венера във 2 дом</h3>
+                    <p class="text-slate-600">Това положение на Венера ще ви накара да се стремите да придавате истинска стойност на всичко. Може самите вие да се отъждествявате с чисто финансови постъпления и материални успехи, също да избирате хората около себе си така, че да имате някаква изгода от тях. Ако Венера е добре аспектирана, тогава вие действително ще можете да печелите от вашите партньорски отношения и от важни за вас контакти и все ще се намира някой, който да допринася за благоденствието ви. Ще развиете отличен усет за печалба. При напрегнати аспекти може да печелите, но постоянно да ви се налага да влагате полученото или пък ще го губите поради неправилна ориентация във финансови сделки, лоши връзки и т.н.</p>
+                </div>
+
+                <!-- 3 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Венера в 3 дом</h3>
+                    <p class="text-slate-600">Това положение ще ви помогне да развиете умствения си потенциал и начин на мислене, така че да се изразявате красиво и със съответните ползи, и с по-голяма лекота да създавате връзки, от които да печелите. Чрез дарсловото си и начина на изразяване вие ще привличате внимание, любов – онова, което най-много обичате или желаете. Ако Венера е добре аспектирана, тогава вие ще се радвате на повече добронамереност и хармония във вашите връзки, при социална активност и занимания, където се използват натрупани знания и интелект. Може да имате успехи при занимания с търговия, да изпитвате щастие при пътувания, да срещате любов от пръв поглед. При напрегнати аспекти трябва да внимавате да не злоупотребявате с подкрепата на околните, защото тя ще бъде неустойчива, понякога разочароваща.</p>
+                </div>
+
+                <!-- 4 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Венера в 4 дом</h3>
+                    <p class="text-slate-600">Това положение е отлично, ако за вас водеща цел е да имате хармонично семейство, може би да имате семеен бизнес или да се занимавате с недвижимо имущество, да печелите от дома си и т.н. Вероятно ще влагате много в комфорта си на съществуване или обстоятелствата ще се стичат така, че действително да се радвате на повече благоденствие и по-висок стандарт у дома. В друг случай „вашият дом ще бъде вашата крепост“ и ще се чувствате най-щастливи с близките си. Ако Венера е добре аспектирана, вашата душа ще е по-спокойна, може да имате усещането, че сте открили своето място под Слънцето, но едва ли амбициите ви ще са чак толкова високи или ще предпочитате спокойствието. При напрегнати аспекти, колкото и да влагате в този сектор от живота си, все ще ескалира усещането, че нещо не достига; може да се чувствате неудовлетворени, все едно не получавате достатъчно от семейството си.</p>
+                </div>
+
+                <!-- 5 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Венера в 5 дом</h3>
+                    <p class="text-slate-600">С това положение на Венера вие все ще намирате начини да порадвате сърцето си, ще се ориентирате предимно към онова, което може да ви направи истински щастливи. Ще имате шанс и късмет да разгърнете и реализирате потенциала си. Ако Венера е добре аспектирана, тогава вие сте благословени в любовта, ще можете да хармонизирате настоящите си сърдечни връзки с партньор или деца, или ако сте сами – да срещнете любовта… няма да забравяте да се забавлявате и ще имате шанс да правите онова, което ви е приятно, независимо дали става въпрос за лични или служебни приоритети. Успех в собствен бизнес, при участие в проекти, занимания пред публика, преподавателска дейност и т.н. Ако Венера е в напрегнати аспекти, тогава може да претърпите загуби вследствие на подчертаното си желание повече да си угаждате, да постигате успехи без особени усилия; повишаващата се страст към удоволствия може да ви струва скъпо.</p>
+                </div>
+
+                <!-- 6 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Венера в 6 дом</h3>
+                    <p class="text-slate-600">Това положение на Венера ще ви помогне да си намерите работа, която обичате или вършите с удоволствие, особено ако Венера е добре аспектирана. Тогава ще се радвате на по-широка подкрепа от страна на вашите колеги или ще можете да срещнете любовта на работното си място, ако това ви интересува. Най-много успехи ще имате, ако в работата си включвате дипломация, имате възможност да изграждате полезни връзки, също ако се включва изкуство, красота или се занимавате с/пряко насочвате парични потоци. Това положение на Венера (ако е добре аспектирана) ще ви даде шанс да подействате позитивно на здравето си, ще ви надари с доза късмет буквално в ежедневието. Ако Венера получава напрегнати аспекти, тогава трябва да се научите на повече дисциплина, да се занимавате и с дела, които не винаги са ви по вкуса, и да избягвате мисълта, че все някой ви е длъжен, за да не предизвиквате обратен ефект.</p>
+                </div>
+
+                <!-- 7 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Венера в 7 дом</h3>
+                    <p class="text-slate-600">Тази позиция е отлична, ако водещ приоритет за вас са партньорските отношения, придобиването на популярност, срещането на по-широка подкрепа и реализацията чрез обществено-значими мероприятия. В такъв случай Венера от 7 дом (особено ако е добре аспектирана) ще допринесе за хармонизирането на важни за вас връзки; вие ще можете да се радвате на все по-голямо одобрение, съпричастност и добронамереност от страна на другите изобщо. Ще имате шанс да се сдобиете с повече топли чувства и нежност между вас и вашата половинка, да изгладите евентуални различия с нея или пък да срещнете любовта, ако все още не сте. Ако Венера е в напрегнати аспекти, тогава въпреки възможностите, които ви се предоставят, вие може да ги погубите поради проектиране на големи очаквания към отсрещната страна, неправилен подход или неразбиране какво наистина се очаква от самите вас.</p>
+                </div>
+
+                <!-- 8 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Венера в 8 дом</h3>
+                    <p class="text-slate-600">Страстите и желанията в душата ви ще ескалират в пъти. Мнозина ще развият силно чувство за собственост и ще желаят да се облагодетелстват от страна на околните изобщо, в частност като си сътрудничат с влиятелни и власт имащи персони и партньори, или се реализират във финансови институции. Венера не е силно поставена тук. По различни поводи ще ви се налага да променяте самите себе си – онова, което отчитате за истински стойностно. Животът ви ще е изпълнен с много предизвикателства, вероятно и възможности, но последните ще се „раждат“ в кризисни ситуации. Ако Венера е добре аспектирана, тогава вие действително ще имате шанс да забогатеете, дори над средното ниво, и то в следствие на важна за вас подкрепа от страна на хора, които влияят на благоденствието ви. Вероятно ще имате бурен сексуален живот, а противоположният пол ще се привлича доста от вас. Ако Венера е в напрегната аспектация, тогава може да изпитвате доста разочарования, постоянно да сте заплашени да не изгубите нещо ценно за вас (любов, пари и т.н.), а за да ги задържите, ще трябва да се адаптирате и трансформирате самите себе си.</p>
+                </div>
+
+                <!-- 9 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Венера в 9 дом</h3>
+                    <p class="text-slate-600">Успех и щастие на път, при взаимодействие с чужденци, хора, стоящи далеч от вас изобщо, влиятелни и висококвалифицирани личности. Ако желаете да се развивате чрез висока квалификация, перманентно да обогатявате вашите знания и интелект и да израствате духовно – това е едно от най-благоприятните положения за вас. Венера винаги ще ви дава нови и нови възможности да разширявате хоризонтите си на развитие, особено ако е добре аспектирана. В такъв случай ще можете да сключвате дългосрочни и обогатяващи договори (включително брачни), можете да срещнете любовта (ако все още не сте) в лицето на чужденец, амбициозна и одухотворена личност. Не е изключено да започнете да идеализирате любовта, а тя да пали ентусиазма ви и вярата в бъдещето. Ще ви върви при занимания с юридически дела, реклама и самореклама, спорт и т.н. Ако Венера е в напрегнати аспекти, може да се целите нависоко и надалеч, но без да преценяте истинските си възможности, и да се разпилявате в различни посоки, без да осъществите нито една цел докрай.</p>
+                </div>
+
+                <!-- 10 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Венера в 10 дом</h3>
+                    <p class="text-slate-600">Вашият чар, дипломатичност и стремеж към красота и съвършенство ще са повод по-лесно да се изкачвате по йерархичната стълбичка. Ще нараснат амбициите ви, а това по един естествен начин ще ви дърпа напред и нагоре. Ако Венера е добре аспектирана, тогава вашите успехи по ключови приоритети – отличен имидж, обществено положение, кариерно израстване, брак – ще са почти гарантирани. Венера е наричана „малкото щастие“, но истината е, че тя има много голямо значение и където се намира тази планета, там човек привлича благоденствие и онова, което желае. Така тази позиция е една от най-благоприятните, защото ще закриля човек в почти всички сфери от живота. Ако Венера получава напрегнати аспекти, тогава трябва да внимавате да не злоупотребявате с шансовете, които ви се дават, също трябва да бъдете по-самокритични и самодисциплинирани, за да не пропилеете възможностите.</p>
+                </div>
+
+                <!-- 11 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Венера в 11 дом</h3>
+                    <p class="text-slate-600">Вие ще се радвате на повече внимание и подкрепа от страна на обкръжението, в което съществувате – винаги ще се намира някой, който да ви подаде ръка, особено ако се нуждаете от такава. Ще можете да разчитате на своя чар и дипломатичност, така че да се сдобивате с популярност, а одобрението и подкрепата към вас да растат (особено от страна на дамите, но не само). Вашите мечти за бъдещо развитие могат да бъдат доста позитивни, но те ще се осъществяват най-добре, ако си сътрудничите и работите в колектив. Ако Венера е добре аспектирана, тогава успехите ви при висока социална активност и работа с клиенти са почти гарантирани. Винаги ще възникват нови и нови възможности за бъдещото ви развитие и то точно в следствие на подкрепа и одобрение от страна на околните изобщо. Ако Венера е с напрегнати аспекти, тогава вашите бъдещи планове може перманентно да се променят в следствие на нестабилна подкрепа от страна на другите, които разколебават собствената ви увереност. В такъв случай вероятно ще е най-добре да поработите повече върху вашата увереност, постоянство и самостоятелност.</p>
+                </div>
+
+                <!-- 12 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Венера в 12 дом</h3>
+                    <p class="text-slate-600">Това положение на Венера е благоприятно за творческия ви потенциал, за духовното ви развитие, интуиция и т.н. Вие ще можете да се радвате на тайна или неочаквана опека, дори от висшите сили, ако Венера е добре аспектирана. Все пак може да имате перманентна нужда да оставате насаме със себе си, за да се зареждате емоционално и физически. Може да имате успехи при занимания с изкуство, ако помагате на другите за тяхното физическо и психическо здраве или се реализирате чрез работа в санаториуми, болнични заведения и при взаимодействие с хора в неравностойно положение. Ще се радвате на тайна или идеалистична любов, вероятно с човек, който е твърде различен от вас. Ако Венера е в напрегнати аспекти, има вероятност да се чувствате самотни, неразбрани, изолирани, да страдате от липса на внимание и любов.</p>
+                </div>
+
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-amber-100 flex items-center justify-between">
+                <a href="ascedent-i-relokacii.html" class="text-amber-700 font-bold hover:underline flex items-center gap-2">
+                    ← Обратно към Асцедент и релокации
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Плаващ бутон за количка долу в дясно -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <button onclick="toggleCartModal()" class="relative bg-amber-600 hover:bg-amber-700 text-white p-4 rounded-full shadow-xl flex items-center justify-center transition cursor-pointer border-2 border-amber-300" title="Отвори количката">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <span id="cart-count-floating" class="absolute -top-1 -right-1 bg-slate-900 text-amber-400 text-xs w-6 h-6 rounded-full font-bold flex items-center justify-center border-2 border-white shadow-xs">0</span>
+    </button>
+</div>
+
+<!-- Страничен панел (Модал / Drawer) за количката -->
+<div id="cart-modal" onclick="handleOutsideClick(event)" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-xs flex justify-end transition-opacity">
+    <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between p-6 transform transition-transform translate-x-full" id="cart-modal-content">
+        <div>
+            <div class="flex items-center justify-between pb-4 border-b border-amber-100">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span>🛒</span> Вашата количка
+                </h3>
+                <button onclick="toggleCartModal()" class="text-slate-400 hover:text-slate-700 p-2 rounded-lg cursor-pointer">
+                    ✕
+                </button>
+            </div>
+            
+            <div id="modal-cart-items" class="py-4 space-y-3 overflow-y-auto max-h-[60vh]">
+                <!-- Динамично зареждане -->
+            </div>
+        </div>
+
+        <div class="border-t border-amber-100 pt-4">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-medium text-slate-600">Обща сума:</span>
+                <span id="modal-cart-total" class="text-2xl font-bold text-amber-700">0 €</span>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="toggleCartModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-3 rounded-xl transition cursor-pointer text-sm">
+                    Продължи пазаруването
+                </button>
+                <a href="cart.html" class="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 rounded-xl transition text-center cursor-pointer text-sm shadow-md">
+                    Към количката
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Футър -->
+    <footer class="bg-white border-t border-amber-200/60 py-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 AstroConsult. Всички права запазени.</p>
+    </footer>
+
+    <!-- Общ скрипт за количката -->
+    <script>
+        let cart = [];
+        function updateCartUI() {
+            const count = cart.length;
+            const topEl = document.getElementById('cart-count-top');
+            const floatEl = document.getElementById('cart-count-floating');
+            if(topEl) topEl.innerText = count;
+            if(floatEl) floatEl.innerText = count;
+        }
+        function toggleCart() {
+            if (cart.length === 0) {
+                alert('Количката ви е празна.');
+            } else {
+                let itemsList = cart.map(item => `- ${item.name} (${item.price} лв.)`).join('\n');
+                let total = cart.reduce((sum, item) => sum + item.price, 0);
+                alert(`Вашата количка:\n\n${itemsList}\n\nОбща сума: ${total} лв.`);
+            }
+        }
+    </script>
+    <script>
+    // Обновяване на броячите при зареждане на страницата
+    function updateAllCounters() {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        let count = cartData.length;
+        
+        let topCounter = document.getElementById('cart-count-top');
+        let floatingCounter = document.getElementById('cart-count-floating');
+        
+        if (topCounter) topCounter.innerText = count;
+        if (floatingCounter) floatingCounter.innerText = count;
+    }
+
+    document.addEventListener('DOMContentLoaded', updateAllCounters);
+
+    // Отваряне и затваряне на страничния панел (drawer)
+    function toggleCartModal() {
+        const modal = document.getElementById('cart-modal');
+        const content = document.getElementById('cart-modal-content');
+        
+        if (modal.classList.contains('hidden')) {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('translate-x-full');
+            }, 10);
+            renderModalCartItems();
+        } else {
+            content.classList.add('translate-x-full');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    }
+
+    // Рендване на продуктите вътре в модала
+    function renderModalCartItems() {
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            let container = document.getElementById('modal-cart-items');
+            let totalElement = document.getElementById('modal-cart-total');
+            
+            let total = 0;
+            let htmlContent = ''; // Събираме всичко тук предварително
+
+            if (cartData.length === 0) {
+                htmlContent = '<p class="text-slate-500 text-center py-8 text-sm">Количката ви е празна.</p>';
+            } else {
+                cartData.forEach((item, index) => {
+                    total += Number(item.price);
+                    htmlContent += `
+                        <div class="flex justify-between items-center bg-amber-50/50 border border-amber-100 p-3.5 rounded-xl">
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm">${item.title}</h4>
+                                <span class="text-amber-700 font-bold text-sm">${item.price} €</span>
+                            </div>
+                            <button onclick="event.stopPropagation(); removeItemFromCart(${index})" class="text-red-400 hover:text-red-600 p-1.5 transition cursor-pointer" title="Премахни">
+                                🗑️
+                            </button>
+                        </div>
+                    `;
+                });
+            }
+
+            // Задаваме готовият HTML наведнъж, без да чупим DOM елементите по време на цикъла
+            container.innerHTML = htmlContent;
+            if (totalElement) {
+                totalElement.innerText = total + ' €';
+            }
+        }
+
+    // Премахване на артикул от количката през модала
+    function removeItemFromCart(index) {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        cartData.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartData));
+        updateAllCounters();
+        renderModalCartItems();
+    }
+    // Функция за затваряне при клик извън белия панел
+function handleOutsideClick(event) {
+    const modalContent = document.getElementById('cart-modal-content');
+    
+    // Проверяваме дали кликът е направен директно върху тъмния фон (а не вътре в белия панел)
+    if (!modalContent.contains(event.target)) {
+        toggleCartModal();
+    }
+}
+// Функция за отваряне/затваряне на мобилното меню
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+    } else {
+        menu.classList.add('hidden');
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2027 – Годината на Огнената Коза | AstroConsult</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-amber-50/40 via-stone-50 to-amber-50/20 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Навигация -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-200/60 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-wider text-amber-700 uppercase flex items-center gap-2">
+                <span class="text-amber-500 text-xl">✦</span> Astro<span class="text-slate-700">Consult</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-10 text-base font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">Начало</a>
+                
+                <!-- Падащо меню за Услуги -->
+                <div class="relative group py-4">
+                    <a href="index.html#services" class="hover:text-amber-700 transition flex items-center gap-1.5 py-2">
+                        Услуги
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 w-72 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="godishen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Годишен хороскоп</a>
+                        <a href="karmichen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп</a>
+                        <a href="karmichen-i-prognoza.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп и прогноза</a>
+                        <a href="partnerski-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Партньорски хороскоп</a>
+                        <a href="horoskop-6-meseca.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Хороскоп за 6 месеца</a>
+                    </div>
+                </div>
+
+                <a href="za-men.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">За мен</a>
+
+                <!-- Падащо меню за Интересно -->
+                <div class="relative group py-4">
+                    <button class="text-amber-700 transition flex items-center gap-1.5 cursor-pointer py-2 font-bold">
+                        Интересно
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 w-64 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="astrologiya.html" class="block px-5 py-3 text-sm text-amber-800 bg-amber-50 transition font-bold">Астрология</a>
+                        <a href="lubopitno.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Любопитно</a>
+                        <a href="ascedent-i-relokacii.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Асцедент и релокации</a>
+                        <a href="tarot.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Карти Таро</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="cart.html" class="relative bg-amber-50 hover:bg-amber-100 text-amber-900 px-4 py-2.5 rounded-full font-semibold text-sm flex items-center space-x-2 transition border border-amber-300 shadow-xs cursor-pointer no-underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span class="hidden sm:inline">Количка</span>
+                    <span id="cart-count-top" class="bg-amber-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+                </a>
+
+                <!-- Бутон за мобилно меню (Бургер) -->
+                <button onclick="toggleMobileMenu()" class="md:hidden bg-amber-50 hover:bg-amber-100 text-amber-900 p-2.5 rounded-full border border-amber-300 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобилно меню (скрито по подразбиране) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-amber-200 px-6 py-4 space-y-3 shadow-lg">
+        <a href="index.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5">Начало</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Услуги:</p>
+            <a href="godishen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Годишен хороскоп</a>
+            <a href="karmichen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп</a>
+            <a href="karmichen-i-prognoza.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп и прогноза</a>
+            <a href="partnerski-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Партньорски хороскоп</a>
+            <a href="horoskop-6-meseca.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Хороскоп за 6 месеца</a>
+        </div>
+        <a href="za-men.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5 border-t border-amber-100 pt-2">За мен</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Интересно:</p>
+            <a href="astrologiya.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Астрология</a>
+            <a href="lubopitno.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Любопитно</a>
+            <a href="ascedent-i-relokacii.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Асцедент и релокации</a>
+            <a href="tarot.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Карти Таро</a>
+        </div>
+    </div>
+
+    <!-- Съдържание на статията -->
+    <main class="flex-grow py-16 px-4 max-w-4xl mx-auto">
+        <article class="bg-white border border-amber-200/80 rounded-3xl p-8 sm:p-12 shadow-xl">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="bg-amber-100 text-amber-800 font-semibold text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-amber-300">Годишна прогноза 2027</span>
+                <span class="text-slate-400 text-sm">~ 8 мин четене</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">2027 – Годината на Огнената Коза</h1>
+            
+            <div class="relative rounded-2xl overflow-hidden mb-8 aspect-[16/9] border border-amber-200">
+                <img src="https://i.postimg.cc/kGQTFrrJ/images.jpg" alt="2027 Годината на Огнената Коза" class="w-full h-full object-cover">
+            </div>
+
+            <div class="prose max-w-none text-slate-600 space-y-6 text-lg leading-relaxed">
+                <p>
+                    2027 носи интересна символика. Това е годината на <span class="text-amber-700 font-semibold">Огнената Коза</span> – необичайна среща между мекота и пламък, чувствителност и смелост, съзерцание и действие.
+                </p>
+                <p>
+                    Козата търси хармонията, красотата и човешката близост. Огънят иска живот, движение и изразяване. Затова символичното послание на тази комбинация е силно: <span class="text-amber-700 font-semibold">не е необходимо да станем по-твърди, за да станем по-силни</span>.
+                </p>
+                <p>
+                    През 2027 г. успехът може по-често да идва не чрез натиск, а чрез <span class="text-amber-700 font-semibold">правилно избран момент, партньорство, добра идея, творчески подход</span> или смелостта да признаем, че старият път вече не е нашият.
+                </p>
+                <p class="font-medium text-slate-800 bg-amber-50/70 p-4 rounded-2xl border border-amber-200/60">
+                    Това е година, в която си струва да задаваме по-малко въпроса „Какво се очаква от мен?“ и по-често – <span class="text-amber-700 font-semibold">„Какво има смисъл за мен?“</span>
+                </p>
+                <p>
+                    Но Огнената Коза има и своята сянка. Желанието за спокойствие може да се превърне в избягване на трудните решения. Чувствителността – в прекалено приемане на чуждите думи. А вдъхновението на Огъня – в ентусиазъм, който пламва бързо и също толкова бързо угасва.
+                </p>
+                <p>
+                    Затова една от големите задачи на 2027 е проста: <span class="text-amber-700 font-semibold">Да запазим пламъка, без да изгорим в него.</span>
+                </p>
+                <p class="text-xl font-bold text-slate-900 pt-4 pb-2 border-t border-amber-200/60">
+                    А къде се крият най-големите възможности и изпитания за твоята зодия?
+                </p>
+
+                <!-- ОВЕН -->
+                <div class="bg-amber-50/40 border border-amber-200/80 rounded-2xl p-6 mt-6">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">♈ ОВЕН – Не всеки старт изисква спринт</h3>
+                    <p class="italic text-slate-700 mb-4 bg-white/80 p-3 rounded-xl border border-amber-100">
+                        <strong class="text-amber-700">Кукичката на годината:</strong> Ами ако през 2027 г. най-смелото ти решение бъде не да тръгнеш пръв, а да изчакаш точния момент?
+                    </p>
+                    <p class="mb-3">Овенът разбира Огъня прекрасно. Именно затова енергията на 2027 може да бъде силен двигател за теб – но и предупреждение.</p>
+                    <p class="mb-3">Това е година за лична инициатива, нови идеи, професионални промени и проекти, които носят твоя почерк. Там, където дълго си чакал разрешение или одобрение, може да осъзнаеш, че всъщност не ти е необходимо.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-големият шанс:</strong> <span class="text-amber-700 font-semibold">Да превърнеш смела идея в реалност.</span> Особено перспективни са начинанията, в които имаш повече свобода, лидерска роля или възможност да създадеш нещо свое.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-голямото предизвикателство:</strong> Нетърпението. Желанието всичко да се случи „сега“ може да те накара да изгориш мост, от който по-късно ще имаш нужда.</p>
+                    <p class="mb-3"><strong class="text-slate-900">Съветът на Огнената Коза:</strong> Не бъркай скоростта с напредъка. Понякога една добре обмислена стъпка те отвежда по-далеч от десет импулсивни.</p>
+                    <p class="font-serif italic text-amber-900 bg-white p-3 rounded-xl border border-amber-200">
+                        „Не всеки огън трябва да стане пожар. Понякога е достатъчно да освети пътя.“
+                    </p>
+                </div>
+
+                <!-- ТЕЛЕЦ -->
+                <div class="bg-amber-50/40 border border-amber-200/80 rounded-2xl p-6 mt-6">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">♉ ТЕЛЕЦ – Сигурността е ценна, докато не се превърне в клетка</h3>
+                    <p class="italic text-slate-700 mb-4 bg-white/80 p-3 rounded-xl border border-amber-100">
+                        <strong class="text-amber-700">Кукичката на годината:</strong> Кое пазиш, защото е ценно – и кое пазиш просто защото се страхуваш да го пуснеш?
+                    </p>
+                    <p class="mb-3">2027 може да раздвижи света на Телеца по много особен начин. Няма непременно да ти отнеме стабилността – по-скоро ще поиска да я преосмислиш.</p>
+                    <p class="mb-3">Темите за пари, собствена стойност, дом, работа и дългосрочна сигурност излизат напред. Може да се появи възможност да печелиш по различен начин, да промениш приоритет или да инвестираш повече в качество на живота.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-големият шанс:</strong> <span class="text-amber-700 font-semibold">Да създадеш по-здрава материална основа</span> и да превърнеш талант или умение в реална стойност.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-голямото предизвикателство:</strong> Привързаността към познатото. Нещо може да е сигурно и въпреки това вече да не е добро за теб.</p>
+                    <p class="mb-3"><strong class="text-slate-900">Съветът на Огнената Коза:</strong> Направи разлика между стабилност и застой. Ако една промяна те плаши, не я отхвърляй веднага – първо разбери защо.</p>
+                    <p class="font-serif italic text-amber-900 bg-white p-3 rounded-xl border border-amber-200">
+                        „Корените ни дават сила не за да останем неподвижни, а за да можем да растем.“
+                    </p>
+                </div>
+
+                <!-- БЛИЗНАЦИ -->
+                <div class="bg-amber-50/40 border border-amber-200/80 rounded-2xl p-6 mt-6">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">♊ БЛИЗНАЦИ – Една идея може да промени посоката</h3>
+                    <p class="italic text-slate-700 mb-4 bg-white/80 p-3 rounded-xl border border-amber-100">
+                        <strong class="text-amber-700">Кукичката на годината:</strong> През 2027 г. една среща, разговор или случайно хрумване може да се окаже много по-важно, отколкото изглежда.
+                    </p>
+                    <p class="mb-3">За Близнаците годината носи силна тема на комуникация, нови контакти, учене, технологии, пътувания и интелектуално обновяване.</p>
+                    <p class="mb-3">Ще има идеи. Много идеи. Истинският въпрос е коя от тях ще получи достатъчно от времето ти, за да стане реалност.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-големият шанс:</strong> Нови хора и нови знания. Възможност може да дойде чрез разговор, обучение, интернет, приятелство или среда, в която досега не си попадал.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-голямото предизвикателство:</strong> Разпиляването. Пет интересни начала не са непременно по-ценни от един завършен проект.</p>
+                    <p class="mb-3"><strong class="text-slate-900">Съветът на Огнената Коза:</strong> Когато нещо истински те запали, остани с него достатъчно дълго.</p>
+                    <p class="font-serif italic text-amber-900 bg-white p-3 rounded-xl border border-amber-200">
+                        „Идеята е искрата. Постоянството е огънят, който я превръща в светлина.“
+                    </p>
+                </div>
+
+                <!-- РАК -->
+                <div class="bg-amber-50/40 border border-amber-200/80 rounded-2xl p-6 mt-6">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">♋ РАК – Границите също са форма на любов</h3>
+                    <p class="italic text-slate-700 mb-4 bg-white/80 p-3 rounded-xl border border-amber-100">
+                        <strong class="text-amber-700">Кукичката на годината:</strong> Колко от енергията си даваш на хора, които винаги имат нужда от още?
+                    </p>
+                    <p class="mb-3">Чувствителността на Козата резонира силно с природата на Рака. 2027 може да бъде важна година за дома, семейството, близостта, емоционалната сигурност и изцелението на стари отношения. Но именно тук се крие и изпитанието.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-големият шанс:</strong> <span class="text-amber-700 font-semibold">Да създадеш по-здравословни и истински отношения</span> – такива, в които не трябва постоянно да доказваш колко много ти пука.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-голямото предизвикателство:</strong> Да носиш чуждите чувства като свои.</p>
+                    <p class="mb-3"><strong class="text-slate-900">Съветът на Огнената Коза:</strong> Научи се да казваш „не“ без чувство за вина. Границата не означава липса на любов. Понякога тя е условието любовта да остане здрава.</p>
+                    <p class="font-serif italic text-amber-900 bg-white p-3 rounded-xl border border-amber-200">
+                        „Не можеш да бъдеш дом за всички, ако никога не се прибираш при себе си.“
+                    </p>
+                </div>
+
+                <!-- ЛЪВ -->
+                <div class="bg-amber-50/40 border border-amber-200/80 rounded-2xl p-6 mt-6">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">♌ ЛЪВ – Време е да светиш заради себе си</h3>
+                    <p class="italic text-slate-700 mb-4 bg-white/80 p-3 rounded-xl border border-amber-100">
+                        <strong class="text-amber-700">Кукичката на годината:</strong> Какво би направил, ако никой не можеше да те аплодира за него?
+                    </p>
+                    <p class="mb-3">Огънят на 2027 естествено подкрепя Лъва. Годината може да донесе повече видимост, творческа енергия и желание за изява в кариерата, личния бранд и собствените проекти.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-големият шанс:</strong> <span class="text-amber-700 font-semibold">Да бъдеш забелязан за нещо, което действително умееш.</span> Покажи работата си, кандидатствай, говори, създавай.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-голямото предизвикателство:</strong> Да измерваш стойността си чрез реакцията на другите.</p>
+                    <p class="mb-3"><strong class="text-slate-900">Съветът на Огнената Коза:</strong> Преди да попиташ „Ще им хареса ли?“, попитай „Аз гордея ли се с това?“</p>
+                    <p class="font-serif italic text-amber-900 bg-white p-3 rounded-xl border border-amber-200">
+                        „Слънцето не пита дали някой го гледа, преди да изгрее.“
+                    </p>
+                </div>
+
+                <!-- ДЕВА -->
+                <div class="bg-amber-50/40 border border-amber-200/80 rounded-2xl p-6 mt-6">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">♍ ДЕВА – Не всичко ценно може да бъде планирано</h3>
+                    <p class="italic text-slate-700 mb-4 bg-white/80 p-3 rounded-xl border border-amber-100">
+                        <strong class="text-amber-700">Кукичката на годината:</strong> Ами ако планът ти не се проваля, а просто животът ти предлага по-добър маршрут?
+                    </p>
+                    <p class="mb-3">За Девата 2027 може да бъде година на постепенно разгръщане. Усилията от миналото започват да придобиват форма, но ще се изисква едно необичайно за теб качество – доверие в процеса.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-големият шанс:</strong> Професионално и лично развитие, усъвършенстване на умение, по-добра организация на живота и превръщане на знанията в резултат.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-голямото предизвикателство:</strong> Перфекционизмът. Може да пропуснеш прекрасна възможност, защото чакаш да бъдеш „напълно готов“.</p>
+                    <p class="mb-3"><strong class="text-slate-900">Съветът на Огнената Коза:</strong> Приеми правилото на 2027: достатъчно добро и започнато е по-ценно от съвършено и отложено.</p>
+                    <p class="font-serif italic text-amber-900 bg-white p-3 rounded-xl border border-amber-200">
+                        „Животът рядко чака да сме готови. Понякога ставаме готови, докато вървим.“
+                    </p>
+                </div>
+
+                <!-- ВЕЗНИ -->
+                <div class="bg-amber-50/40 border border-amber-200/80 rounded-2xl p-6 mt-6">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">♎ ВЕЗНИ – Избери себе си, без да воюваш с другите</h3>
+                    <p class="italic text-slate-700 mb-4 bg-white/80 p-3 rounded-xl border border-amber-100">
+                        <strong class="text-amber-700">Кукичката на годината:</strong> Колко решения си взел само за да не разочароваш някого?
+                    </p>
+                    <p class="mb-3">Енергията на Козата разбира желанието на Везните за хармония. Именно затова 2027 може да постави отношенията в центъра – любов, партньорства, приятелства и важни съюзи.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-големият шанс:</strong> Партньорствата. Правилният човек – в любовта или работата – може да отвори възможност, която сам трудно би достигнал.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-голямото предизвикателство:</strong> Да казваш „да“, когато вътрешно мислиш „не“.</p>
+                    <p class="mb-3"><strong class="text-slate-900">Съветът на Огнената Коза:</strong> Мирът, който купуваш със собственото си мълчание, обикновено е твърде скъп.</p>
+                    <p class="font-serif italic text-amber-900 bg-white p-3 rounded-xl border border-amber-200">
+                        „Хармонията не е липса на различия. Тя е място, в което има пространство и за твоя глас.“
+                    </p>
+                </div>
+
+                <!-- СКОРПИОН -->
+                <div class="bg-amber-50/40 border border-amber-200/80 rounded-2xl p-6 mt-6">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">♏ СКОРПИОН – Остави старото да изгори</h3>
+                    <p class="italic text-slate-700 mb-4 bg-white/80 p-3 rounded-xl border border-amber-100">
+                        <strong class="text-amber-700">Кукичката на годината:</strong> Някои врати не се затварят, за да те накажат. Затварят се, защото вече си твърде голям за стаята.
+                    </p>
+                    <p class="mb-3">2027 може да бъде трансформираща за Скорпиона. На повърхността промяната може да изглежда неудобна, но под нея се крие възможност за освобождаване.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-големият шанс:</strong> <span class="text-amber-700 font-semibold">Дълбока промяна</span> – финансова, професионална или лична. Годината е подходяща да прекъснеш модел, който се повтаря твърде дълго.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-голямото предизвикателство:</strong> Желанието да контролираш резултата и да държиш нещо само защото някога е било важно.</p>
+                    <p class="mb-3"><strong class="text-slate-900">Съветът на Огнената Коза:</strong> Не се страхувай от края на един период. Освободеното място не е празнота – то е пространство.</p>
+                    <p class="font-serif italic text-amber-900 bg-white p-3 rounded-xl border border-amber-200">
+                        „Понякога животът не ни отнема нещо. Просто освобождава ръцете ни за следващото.“
+                    </p>
+                </div>
+
+                <!-- СТРЕЛЕЦ -->
+                <div class="bg-amber-50/40 border border-amber-200/80 rounded-2xl p-6 mt-6">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">♐ СТРЕЛЕЦ – Хоризонтът отново се разширява</h3>
+                    <p class="italic text-slate-700 mb-4 bg-white/80 p-3 rounded-xl border border-amber-100">
+                        <strong class="text-amber-700">Кукичката на годината:</strong> Ако отдавна чакаш знак да опиташ нещо различно, 2027 може да ти даде повече от един.
+                    </p>
+                    <p class="mb-3">Стрелецът обича простор, а Огънят подхранва естествения му оптимизъм. Пътувания, обучение, нови професионални посоки и разширяване на мирогледа стават водещи теми.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-големият шанс:</strong> Да излезеш извън досегашната си среда. Нова държава, ново знание, нова професия или нов начин на живот могат да разширят възможностите ти.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-голямото предизвикателство:</strong> Да избягаш към следващото приключение, преди да си завършил настоящото.</p>
+                    <p class="mb-3"><strong class="text-slate-900">Съветът на Огнената Коза:</strong> Търси новото, но вземи със себе си наученото от старото.</p>
+                    <p class="font-serif italic text-amber-900 bg-white p-3 rounded-xl border border-amber-200">
+                        „Хоризонтът не е граница. Той е покана.“
+                    </p>
+                </div>
+
+                <!-- КОЗИРОГ -->
+                <div class="bg-amber-50/40 border border-amber-200/80 rounded-2xl p-6 mt-6">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">♑ КОЗИРОГ – Успехът има смисъл само ако животът ти остава вътре в него</h3>
+                    <p class="italic text-slate-700 mb-4 bg-white/80 p-3 rounded-xl border border-amber-100">
+                        <strong class="text-amber-700">Кукичката на годината:</strong> Каква е цената на целта ти – и все още ли си готов да я платиш?
+                    </p>
+                    <p class="mb-3">За Козирога 2027 поставя въпрос не толкова за амбицията, колкото за смисъла зад нея. Възможно е да постигнеш важен професионален напредък, но едновременно с това да преосмислиш как изглежда успехът лично за теб.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-големият шанс:</strong> Кариера, авторитет, дългосрочен проект и изграждане на стабилна основа за следващите години.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-голямото предизвикателство:</strong> Прегарянето. Не превръщай всяка свободна минута в задача.</p>
+                    <p class="mb-3"><strong class="text-slate-900">Съветът на Огнената Коза:</strong> Постави почивката в календара си със същата сериозност, с която поставяш целите.</p>
+                    <p class="font-serif italic text-amber-900 bg-white p-3 rounded-xl border border-amber-200">
+                        „Не строи толкова усърдно бъдещето, че да забравиш да живееш настоящето.“
+                    </p>
+                </div>
+
+                <!-- ВОДОЛЕЙ -->
+                <div class="bg-amber-50/40 border border-amber-200/80 rounded-2xl p-6 mt-6">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">♒ ВОДОЛЕЙ – Идеята, която изглежда странна днес, може да бъде очевидна утре</h3>
+                    <p class="italic text-slate-700 mb-4 bg-white/80 p-3 rounded-xl border border-amber-100">
+                        <strong class="text-amber-700">Кукичката на годината:</strong> Точно онова, което другите не разбират в идеята ти, може да бъде най-ценното в нея.
+                    </p>
+                    <p class="mb-3">2027 насърчава оригиналността на Водолея. Технологии, нови общности, нестандартни проекти и социални инициативи се оказват плодородна територия.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-големият шанс:</strong> Иновацията и хората. Свързването с правилната общност може да ускори идея, която сам развиваш трудно.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-голямото предизвикателство:</strong> Да се дистанцираш емоционално и да решиш, че щом другите не разбират идеята ти веднага, няма смисъл да я обясняваш.</p>
+                    <p class="mb-3"><strong class="text-slate-900">Съветът на Огнената Коза:</strong> Не просто измисляй бъдещето – научи се да го превеждаш на езика на хората около теб.</p>
+                    <p class="font-serif italic text-amber-900 bg-white p-3 rounded-xl border border-amber-200">
+                        „Бъдещето първо се появява като идея, която настоящето още не разбира.“
+                    </p>
+                </div>
+
+                <!-- РИБИ -->
+                <div class="bg-amber-50/40 border border-amber-200/80 rounded-2xl p-6 mt-6">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">♓ РИБИ – Интуицията е дар, но се нуждае от посока</h3>
+                    <p class="italic text-slate-700 mb-4 bg-white/80 p-3 rounded-xl border border-amber-100">
+                        <strong class="text-amber-700">Кукичката на годината:</strong> Ами ако онова тихо усещане, което от месеци пренебрегваш, всъщност се опитва да ти каже нещо?
+                    </p>
+                    <p class="mb-3">Енергията на Козата се усеща естествено за чувствителните Риби. 2027 подкрепя творчеството, духовното развитие, интуицията и работата, която носи по-дълбок смисъл. Но мечтата трябва да срещне реалността.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-големият шанс:</strong> <span class="text-amber-700 font-semibold">Да превърнеш талант, мечта или творческа идея в нещо конкретно.</span> Това, което досега е било само усещане, може да получи форма.</p>
+                    <p class="mb-2"><strong class="text-slate-900">Най-голямото предизвикателство:</strong> Идеализирането – особено на хора и възможности.</p>
+                    <p class="mb-3"><strong class="text-slate-900">Съветът на Огнената Коза:</strong> Слушай интуицията си, но проверявай фактите. Сърцето и разумът не са врагове.</p>
+                    <p class="font-serif italic text-amber-900 bg-white p-3 rounded-xl border border-amber-200">
+                        „Мечтата получава сила не когато избягаме в нея, а когато намерим смелост да я превърнем в живот.“
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-amber-100 flex items-center justify-between">
+                <a href="astrologiya.html" class="text-amber-700 font-bold hover:underline flex items-center gap-2">
+                    ← Обратно към всички статии
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Плаващ бутон за количка долу в дясно -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <button onclick="toggleCartModal()" class="relative bg-amber-600 hover:bg-amber-700 text-white p-4 rounded-full shadow-xl flex items-center justify-center transition cursor-pointer border-2 border-amber-300" title="Отвори количката">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <span id="cart-count-floating" class="absolute -top-1 -right-1 bg-slate-900 text-amber-400 text-xs w-6 h-6 rounded-full font-bold flex items-center justify-center border-2 border-white shadow-xs">0</span>
+    </button>
+</div>
+
+<!-- Страничен панел (Модал / Drawer) за количката -->
+<div id="cart-modal" onclick="handleOutsideClick(event)" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-xs flex justify-end transition-opacity">
+    <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between p-6 transform transition-transform translate-x-full" id="cart-modal-content">
+        <div>
+            <div class="flex items-center justify-between pb-4 border-b border-amber-100">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span>🛒</span> Вашата количка
+                </h3>
+                <button onclick="toggleCartModal()" class="text-slate-400 hover:text-slate-700 p-2 rounded-lg cursor-pointer">
+                    ✕
+                </button>
+            </div>
+            
+            <div id="modal-cart-items" class="py-4 space-y-3 overflow-y-auto max-h-[60vh]">
+                <!-- Динамично зареждане -->
+            </div>
+        </div>
+
+        <div class="border-t border-amber-100 pt-4">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-medium text-slate-600">Обща сума:</span>
+                <span id="modal-cart-total" class="text-2xl font-bold text-amber-700">0 €</span>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="toggleCartModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-3 rounded-xl transition cursor-pointer text-sm">
+                    Продължи пазаруването
+                </button>
+                <a href="cart.html" class="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 rounded-xl transition text-center cursor-pointer text-sm shadow-md">
+                    Към количката
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Футър -->
+    <footer class="bg-white border-t border-amber-200/60 py-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 AstroConsult. Всички права запазени.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+        function updateCartUI() {
+            const count = cart.length;
+            const topEl = document.getElementById('cart-count-top');
+            const floatEl = document.getElementById('cart-count-floating');
+            if(topEl) topEl.innerText = count;
+            if(floatEl) floatEl.innerText = count;
+        }
+        function toggleCart() {
+            if (cart.length === 0) {
+                alert('Количката ви е празна.');
+            } else {
+                let itemsList = cart.map(item => `- ${item.name} (${item.price} лв.)`).join('\n');
+                let total = cart.reduce((sum, item) => sum + item.price, 0);
+                alert(`Вашата количка:\n\n${itemsList}\n\nОбща сума: ${total} лв.`);
+            }
+        }
+    </script>
+    <script>
+    // Обновяване на броячите при зареждане на страницата
+    function updateAllCounters() {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        let count = cartData.length;
+        
+        let topCounter = document.getElementById('cart-count-top');
+        let floatingCounter = document.getElementById('cart-count-floating');
+        
+        if (topCounter) topCounter.innerText = count;
+        if (floatingCounter) floatingCounter.innerText = count;
+    }
+
+    document.addEventListener('DOMContentLoaded', updateAllCounters);
+
+    // Отваряне и затваряне на страничния панел (drawer)
+    function toggleCartModal() {
+        const modal = document.getElementById('cart-modal');
+        const content = document.getElementById('cart-modal-content');
+        
+        if (modal.classList.contains('hidden')) {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('translate-x-full');
+            }, 10);
+            renderModalCartItems();
+        } else {
+            content.classList.add('translate-x-full');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    }
+
+    // Рендване на продуктите вътре в модала
+    function renderModalCartItems() {
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            let container = document.getElementById('modal-cart-items');
+            let totalElement = document.getElementById('modal-cart-total');
+            
+            let total = 0;
+            let htmlContent = ''; // Събираме всичко тук предварително
+
+            if (cartData.length === 0) {
+                htmlContent = '<p class="text-slate-500 text-center py-8 text-sm">Количката ви е празна.</p>';
+            } else {
+                cartData.forEach((item, index) => {
+                    total += Number(item.price);
+                    htmlContent += `
+                        <div class="flex justify-between items-center bg-amber-50/50 border border-amber-100 p-3.5 rounded-xl">
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm">${item.title}</h4>
+                                <span class="text-amber-700 font-bold text-sm">${item.price} €</span>
+                            </div>
+                            <button onclick="event.stopPropagation(); removeItemFromCart(${index})" class="text-red-400 hover:text-red-600 p-1.5 transition cursor-pointer" title="Премахни">
+                                🗑️
+                            </button>
+                        </div>
+                    `;
+                });
+            }
+
+            // Задаваме готовият HTML наведнъж, без да чупим DOM елементите по време на цикъла
+            container.innerHTML = htmlContent;
+            if (totalElement) {
+                totalElement.innerText = total + ' €';
+            }
+        }
+
+    // Премахване на артикул от количката през модала
+    function removeItemFromCart(index) {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        cartData.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartData));
+        updateAllCounters();
+        renderModalCartItems();
+    }
+    // Функция за затваряне при клик извън белия панел
+function handleOutsideClick(event) {
+    const modalContent = document.getElementById('cart-modal-content');
+    
+    // Проверяваме дали кликът е направен директно върху тъмния фон (а не вътре в белия панел)
+    if (!modalContent.contains(event.target)) {
+        toggleCartModal();
+    }
+}
+// Функция за отваряне/затваряне на мобилното меню
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+    } else {
+        menu.classList.add('hidden');
+    }
+}
+</script>
+</body>
+</html>

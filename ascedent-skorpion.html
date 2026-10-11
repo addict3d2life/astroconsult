@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Асцендент Скорпион в натална карта и при релокация | AstroConsult</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-amber-50/40 via-stone-50 to-amber-50/20 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Навигация -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-200/60 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-wider text-amber-700 uppercase flex items-center gap-2">
+                <span class="text-amber-500 text-xl">✦</span> Astro<span class="text-slate-700">Consult</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-10 text-base font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">Начало</a>
+                
+                <!-- Падащо меню за Услуги -->
+                <div class="relative group py-4">
+                    <a href="index.html#services" class="hover:text-amber-700 transition flex items-center gap-1.5 py-2">
+                        Услуги
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 w-72 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="godishen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Годишен хороскоп</a>
+                        <a href="karmichen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп</a>
+                        <a href="karmichen-i-prognoza.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп и прогноза</a>
+                        <a href="partnerski-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Партньорски хороскоп</a>
+                        <a href="horoskop-6-meseca.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Хороскоп за 6 месеца</a>
+                    </div>
+                </div>
+
+                <a href="za-men.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">За мен</a>
+
+                <!-- Падащо меню за Интересно -->
+                <div class="relative group py-4">
+                    <button class="text-amber-700 transition flex items-center gap-1.5 cursor-pointer py-2 font-bold">
+                        Интересно
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 w-64 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="astrologiya.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Астрология</a>
+                        <a href="lubopitno.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Любопитно</a>
+                        <a href="ascedent-i-relokacii.html" class="block px-5 py-3 text-sm text-amber-800 bg-amber-50 transition font-bold">Асцедент и релокации</a>
+                        <a href="tarot.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Карти Таро</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="cart.html" class="relative bg-amber-50 hover:bg-amber-100 text-amber-900 px-4 py-2.5 rounded-full font-semibold text-sm flex items-center space-x-2 transition border border-amber-300 shadow-xs cursor-pointer no-underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span class="hidden sm:inline">Количка</span>
+                    <span id="cart-count-top" class="bg-amber-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+                </a>
+
+                <!-- Бутон за мобилно меню (Бургер) -->
+                <button onclick="toggleMobileMenu()" class="md:hidden bg-amber-50 hover:bg-amber-100 text-amber-900 p-2.5 rounded-full border border-amber-300 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобилно меню (скрито по подразбиране) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-amber-200 px-6 py-4 space-y-3 shadow-lg">
+        <a href="index.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5">Начало</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Услуги:</p>
+            <a href="godishen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Годишен хороскоп</a>
+            <a href="karmichen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп</a>
+            <a href="karmichen-i-prognoza.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп и прогноза</a>
+            <a href="partnerski-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Партньорски хороскоп</a>
+            <a href="horoskop-6-meseca.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Хороскоп за 6 месеца</a>
+        </div>
+        <a href="za-men.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5 border-t border-amber-100 pt-2">За мен</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Интересно:</p>
+            <a href="astrologiya.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Астрология</a>
+            <a href="lubopitno.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Любопитно</a>
+            <a href="ascedent-i-relokacii.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Асцедент и релокации</a>
+            <a href="tarot.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Карти Таро</a>
+        </div>
+    </div>
+
+    <!-- Съдържание на статията -->
+    <main class="flex-grow py-16 px-4 max-w-4xl mx-auto">
+        <article class="bg-white border border-amber-200/80 rounded-3xl p-8 sm:p-12 shadow-xl">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="bg-amber-100 text-amber-800 font-semibold text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-amber-300">Асцедент Скорпион</span>
+                <span class="text-slate-400 text-sm">~ 14 мин четене</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">Асцендент Скорпион в натална карта и при релокация</h1>
+            
+            <div class="h-48 bg-gradient-to-br from-amber-500/10 via-amber-200/20 to-amber-600/10 flex items-center justify-center border border-amber-200 rounded-2xl mb-8">
+                <span class="text-7xl text-amber-700 font-serif">♏</span>
+            </div>
+
+            <div class="prose max-w-none text-slate-600 space-y-6 text-lg leading-relaxed">
+                <p>
+                    Този асцендент ще придаде на характера ви огромна сила – вие ще можете да отключите по-лесно допълнителни и скрити на пръв поглед източници на енергия, вътрешни характеристики, които са дълбоко закодирани в душата ви. Тези качества се активират обаче под въздействието на ярки емоционални преживявания, развито чувство за притежание в един по-широк смисъл, а също и нерядко под въздействие на кризисни ситуации. Скорпион привлича превратностите, които пък от своя страна са повод за паралелни шансове…
+                </p>
+
+                <p class="bg-amber-50/70 border border-amber-200/80 p-5 rounded-2xl text-slate-700">
+                    Животът на хора със силно влияние на Скорпион (Слънце, Асцендент или Луна в Скорпион) рядко е спокоен. <span class="text-amber-700 font-semibold">Той обикновено е бурен, предизвикателен, но също изпълнен с множество възможности, които изплуват пред тях като от нищото, но се имплантират трайно в характера им, съответно ги правят по-силни, устойчиви на външни влияния</span> и подготвени да се справят с предизвикателствата, излизайки победители във всякакви ситуации.
+                </p>
+
+                <p>
+                    С този Асцендент вие ще развиете усет за причинно-следствени връзки, ще усилите интуицията си в пъти, все повече ще сте склонни да си служите с тайни способи на въздействие, така че да направлявате хора и събития подобно на кукловод, който ги направлява по един невидим начин, стратегически – като не всички действия и намерения са видими, но пък са доста резултатни.
+                </p>
+
+                <p>
+                    С Асцендент Скорпион желанието за власт (буквално и в по-широк смисъл) ще расте, а паралелно с това и начините, които ще откривате, така че да постигнете това. Ще се усилват качества като воля, преследване на цели до краен предел, докато се постигнат, използване на тактика, а понякога и манипулации.
+                </p>
+
+                <p>
+                    С този Асцендент ще привличате партньори, които са богати или могат да ви подпомогнат чисто финансово. Всъщност вие все ще намирате начини за печалба и точно като се възползвате от другите – от техните позитиви, но и негативи.
+                </p>
+
+                <p>
+                    Сексът също ще се превърне във водеща тема, която обсебва съзнанието ви и може да е повод да изразите себе си.
+                </p>
+
+                <p>
+                    Скорпион все пак може да изкара на повърхността заложби, които да ви изградят като борци за една по-висша справедливост, но могат да ви направят и отмъстителни, като тъмната страна и криминогенните наклонности от вашата същност станат водещи – това може да е причина за попадане в опасни ситуации. Но как ще се прояви Асцендентът много зависи от това как са разположени управителите на Асцендента, съответно как са аспектирани, в кои знаци и домове се намират…
+                </p>
+
+                <h2 class="text-3xl font-bold text-slate-900 pt-6 border-t border-amber-200/60">Марс или Плутон по домове при Асцендент Скорпион</h2>
+
+                <!-- 1 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Марс или Плутон в 1 дом</h3>
+                    <p class="text-slate-600">Марс в 1 дом ще ви направи енергични, инициативни – вие в повечето случаи ще имате усещането, че сами сте „капитани на собствения си кораб“, защото действието поражда и резултат, който очевидно се провокира от самите вас. С Плутон в 1 дом вие можете да разчитате на доза магия, с която привличате възможностите пред вас. Ако Плутон е добре аспектиран, вие ще вдъхвате респект и уважение и по един естествен начин ще се сдобивате с власт – буквално и в по-широкия смисъл. Добре аспектираният Марс гарантира, че вашите инициативи са в правилна посока и почти нищо не може да застане на пътя на успехите ви – вие ще сте лидери, които оказват значимо влияние и на околните. При напрегнати аспекти към Марс или Плутон самите вие може да се превърнете в най-големите си врагове поради егоистични прояви, които ще действат доста отблъскващо за околните.</p>
+                </div>
+
+                <!-- 2 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Марс или Плутон във 2 дом</h3>
+                    <p class="text-slate-600">Страстта за притежание, състезателният хъс, енергията и инициативността, които притежавате, ще се влейят в идеята за богатство. Ще влагате много сили и всички понятия ще се ориентират към това как да подобрите благосъстоянието си. Ако Марс е добре аспектиран, тогава вие ще печелите чрез висока активна физическа натовареност, ще бъдете доста работоспособни и ще печелите от това. Успехи ще ви носят занимания с техника, огън, навсякъде, където зависите от собствената си инициативност. Ако Плутон е добре аспектиран, шансовете да стигнете до крупни печалби ще са повече от големи и за целта може да използвате скрити способи, нетрадиционни методи или с голям риск, също така все ще намирате начини да карате другите да „работят за вас“ или да ви подпомагат чисто материално. Ще използвате невидими на пръв поглед източници за печалба, може да се доверявате и на интуицията си. При напрегнати аспекти на Марс или Плутон може да полагате много усилия да подобрите финансовото си състояние, но това ще ви струва скъпо или може да загубите всичко постигнато, ако не се научите да слагате някакви морални граници. Трябва да минимизирате съзнателно развиващото се чувство за собственост, което ще предизвиква обратен от очаквания резултат.</p>
+                </div>
+
+                <!-- 3 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Марс или Плутон в 3 дом</h3>
+                    <p class="text-slate-600">Средата ви на съществуване може да стане доста напрегната поради висока конкуренция и необходимост да си служите с думите като с оръжие, така че да побеждавате. Ако Марс е добре аспектиран, тогава вие действително ще заемете позиции на лидери в близкото си обкръжение, ще направлявате околните чрез натрупани знания, опит и комуникативни умения. Може да печелите или да се реализирате в сферата на транспорта, при пътувания или навсякъде, където имате някакви технически познания и можете да изразите опита си. Ако Плутон е добре аспектиран, тогава вие ще успявате да властвате над околните, защото интуитивно ще ги познавате, дори и от един скрит ъгъл. Мисълта ви ще става все по-дълбока, способна да вижда и отвъд видимото, а вие ще се възползвате от това, за да властвате над околните, за да им оказвате значимо въздействие – и те действително ще ви слушат и уважават. При напрегнати аспекти на Марс или Плутон чрез невъздържания си език може да си предизвикате силни врагове, които перманентно ще объркват предварителните ви планове; средата ви на съществуване ще стане по-скоро враждебна и ще трябва да се пазите от инциденти на пътя.</p>
+                </div>
+
+                <!-- 4 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Марс или Плутон в 4 дом</h3>
+                    <p class="text-slate-600">Тези планети не предполагат хармония в дома и семейството от този сектор и независимо как са аспектирани. Все пак и при добри аспекти вашето желание да контролирате и направлявате близките си ще се увенчава с успех, въпреки че перманентната борба за надмощие е доста вероятна. Ако Марс е добре аспектиран, тогава може да разчитате, че ще се сдобиете с лидерски позиции у дома, ще влияете на околните, а те ще се съобразяват с вас, също така ще получавате подкрепа от страна на енергична личност от вашето семейство. Вероятно водеща тема в живота ви ще бъде точно домът и семейството; може да развиете собствен бизнес, да изпълнявате от дома си професионалните си ангажименти или да се занимавате с недвижимо имущество. Ако Плутон е добре аспектиран, перманентните трансформации в дома и семейството ще се канализират в положителна посока, може да стигнете до крупни печалби от недвижимо имущество. При напрегнати аспекти на Марс или Плутон е възможно да има конфликти, загуби, трагични обстоятелства в дома и семейството.</p>
+                </div>
+
+                <!-- 5 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Марс или Плутон в 5 дом</h3>
+                    <p class="text-slate-600">Тези две планети в този сектор ще усилят още повече страстта в душата ви да се сдобивате с онова, което най-много желаете и отчитате за любимо. Ще преследвате със забележителен плам целите си, ще се стремите да изпъквате и да бъдете по-независими и забелязвани – и ако планетите са добре аспектирани, ще успявате. Сърдечните взаимоотношения ще бъдат съпътствани от огнени чувства и забележителни преживявания, които ще оставят траен отпечатък както във вашето сърце, така и в отсрещната страна; любовният ви живот вероятно ще бъде достоен да се опише в роман. Въпреки всичко сърдечните ви връзки рядко ще бъдат спокойни, независимо как са аспектирани планетите. Ако Марс е добре аспектиран, вие ще просперирате чрез хоби, което може и да е работа, чрез собствен бизнес, и ще ви върви в любовта. Ако Плутон получава положителни аспекти, ще притежавате доза късмет в почти всяко начинание, а рисковите ви действия ще водят до печалби или отлични резултати, както и забележителен сексуален опит и развитие на страстни връзки. При напрегнати аспекти ще наранявате точно тези, които всъщност трябва да обичате, а неумерените или хазартни действия ще водят до крупни загуби буквално и в по-широкия смисъл.</p>
+                </div>
+
+                <!-- 6 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Марс или Плутон в 6 дом</h3>
+                    <p class="text-slate-600">От този сектор тези планети ще ви направят работохолици – вие ще сте доста дейни, инициативни и ще влагате цялата си енергия в посока отлична професионална реализация. Работата ви трябва да е динамична и по възможност физически активна или натоварена. Вероятно ще съществувате в напрегната работна среда, а ежедневието ви може да е изпълнено с предизвикателства, скрити възможности или опасности. Ако Марс е добре аспектиран, състезателният хъс и конструктивните цели, които преследвате и са по силите ви, ще се реализират по един естествен начин, ще ви извоюват лидерски позиции или вие ще се сдобиете с работа, в която ви се дава значима независимост (вероятно няма да имате пряк шеф над главата си). Ако Плутон е добре аспектиран, желанието ви за власт ще се реализира, а самата ви работа може да е свързана с власт, сила и поемане на доза риск. При напрегнати аспекти ви очаква напрегната, непосилна или опасна работа, здравето ви може да бъде застрашено от това, или пък ще се сблъскате с вредни навици и прекалено голямо напрежение при изпълнение на текущи ангажименти.</p>
+                </div>
+
+                <!-- 7 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Марс или Плутон в 7 дом</h3>
+                    <p class="text-slate-600">Водеща цел за вас ще се превърне справянето с енергични противници, отговора на повишени изисквания от страна на личности, които влияят на собствената ви реализация, и привличането на ваша страна на влиятелни или власт имащи особи и партньори (лични или делови). Независимо как са аспектирани тези планети, от този сектор те показват, че вие ще зависите в значима степен от одобрението или подкрепата на важни за вас лица и изглежда, че ще загубите част от независимостта си. Планетите ще изискват компромис във взаимоотношенията ви, за да ги съхраните. Ако Марс е добре аспектиран, тогава вие действително ще успявате да се справяте с повишени изисквания и конкуренция, ще привлечете енергичен партньор, който ще се превръща в мост към успехите ви. Ако Плутон е добре аспектиран, вашите взаимоотношения ще бъдат сложни, ще изискват перманентни трансформации, но те могат да бъдат насочвани в една по-положителна посока, така че връзката да става все по-силна и емоционална. Ако Плутон или Марс са в напрегнати аспекти, тогава вие можете да получите дълбоки травми, които се провокират от отсрещната страна.</p>
+                </div>
+
+                <!-- 8 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Марс или Плутон в 8 дом</h3>
+                    <p class="text-slate-600">Тези планети са поставени много силно от този сектор – те са на „трон“, така че ще можете да се сдобивате с крупни печалби и да постигате почти всяка цел, която си поставите. Вероятно ще се устремите към това да получавате материална или морална подкрепа от страна на влиятелни личности, партньори или финансови институции, така че да преумножите благата си. Можете да преуспеете чрез подобна подкрепа и сътрудничество, особено ако Марс и Плутон са добре аспектирани. Тогава ще имате забележителни успехи, ще поемате умерени рискове (или такива, които се оказват оправдани), повишаващи благосъстоянието ви, и ще имате страстни сексуални отношения. При напрегнати аспекти прекалено развитото чувство за собственост, рисковите манипулации и желанието за притежание и контрол без умереност ще водят до точно обратен от очаквания резултат, като може да попадате в опасни или животозастрашаващи ситуации. Все пак перманентно ще откривате нови възможности, а психичните или физически регенеративни способности ще са забележителни.</p>
+                </div>
+
+                <!-- 9 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Марс или Плутон в 9 дом</h3>
+                    <p class="text-slate-600">Ще изпитате страст или силно влечение към това да пътувате, да разширявате перманентно вашите възможности чрез повишаване на квалификацията си, самореклама, афиширане на качества и способности, обогатяване на знанията и привличане на ваша страна на енергични, влиятелни и власт имащи персони (включително извън близкото ви обкръжение, както и чужденци). Ако Марс е добре аспектиран, това ще повиши допълнително жизнените ви сили, дееспособност, пробивност и ще отключи доза късмет в собствените ви инициативи. Ако Плутон е добре аспектиран, ви очаква забележително духовно развитие и прозрения, интерес към окултното, като всички трансформации ще се оказват във ваша полза.</p>
+                </div>
+
+                <!-- 10 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Марс или Плутон в 10 дом</h3>
+                    <p class="text-slate-600">Състезателният хъс да сте първи, лидери, да управлявате, ще се увенчаят с успех, дори и това да е свързано с борба за власт, надмощие и голяма конкуренция. Изглежда, че последните само ще ви стимулират да се развивате, понякога да се учите от вашите съперници. Ако Марс е добре аспектиран, вие ще се представяте пред света като отговорни хора с конструктивни и целесъобразни действия, на които може да се има доверие, и съответно по един естествен начин ще можете да се сдобиете с управленски позиции. Ако Плутон е добре аспектиран, това е гаранция за сдобиване с власт буквално или в по-широкия смисъл, наред с отлични показания за собствен бизнес.</p>
+                </div>
+
+                <!-- 11 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Марс или Плутон в 11 дом</h3>
+                    <p class="text-slate-600">Ще концентрирате вашите усилия в посока да утвърждавате позициите си в колектив. Околните невинаги ще бъдат особено доброжелателни към вас – перманентно ще възникват ситуации на напрежение поради високи претенции и желание за надмощие, а бъдещите ви планове ще изглеждат свързани с борба и няма да позволяват отпускане. Ако Марс е добре аспектиран, тогава ще се сдобиете с приятели или други енергични личности, които ще ви действат стимулиращо, ще можете да се справяте с висока конкуренция, а действията ви ще бъдат високо ефективни и ще оказвате значимо влияние на колектива, в който съществувате. Ако Плутон е в положителни аспекти, ще срещате хора, които са неслучайни – те могат да бъдат ваши ментори или да сте кармично обвързани, а те да преобразяват бъдещите ви планове, да ви показват много по-широки възможности (понякога и скрити на пръв поглед), като може да се сдобиете и с власт при висока социална активност. При напрегнати аспекти ви очаква постоянна смяна на средата, неясно бъдеще и враждебно обкръжение.</p>
+                </div>
+
+                <!-- 12 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Марс или Плутон в 12 дом</h3>
+                    <p class="text-slate-600">Слаба позиция за тези две планети – може да отключат асоциално поведение, фобии, страхове, човек да се отдаде на изкушения или да бъде криминално привлечен. Енергията е блокирана, както и голяма част от възможностите, а човек страда от скрити или явни врагове. Ако Марс е добре аспектиран, тогава човек има шанс да разгърне потенциала си чрез скрити на пръв поглед възможности и свои качества, които се отключват и разгръщат (включително някакъв талант). Ако Плутон е добре аспектиран, може да отключи забележителни психични способности и шансове, невидими до този момент. При напрегнати аспекти съществува опасност от затваряне (реално и в затвори, болнични заведения, други изолирани социални структури) или ограничаване на физическите и психическите сили, опасност за здравето и живота, понякога от неясен първоизточник.</p>
+                </div>
+
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-amber-100 flex items-center justify-between">
+                <a href="ascedent-i-relokacii.html" class="text-amber-700 font-bold hover:underline flex items-center gap-2">
+                    ← Обратно към Асцедент и релокации
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Плаващ бутон за количка долу в дясно -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <button onclick="toggleCartModal()" class="relative bg-amber-600 hover:bg-amber-700 text-white p-4 rounded-full shadow-xl flex items-center justify-center transition cursor-pointer border-2 border-amber-300" title="Отвори количката">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <span id="cart-count-floating" class="absolute -top-1 -right-1 bg-slate-900 text-amber-400 text-xs w-6 h-6 rounded-full font-bold flex items-center justify-center border-2 border-white shadow-xs">0</span>
+    </button>
+</div>
+
+<!-- Страничен панел (Модал / Drawer) за количката -->
+<div id="cart-modal" onclick="handleOutsideClick(event)" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-xs flex justify-end transition-opacity">
+    <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between p-6 transform transition-transform translate-x-full" id="cart-modal-content">
+        <div>
+            <div class="flex items-center justify-between pb-4 border-b border-amber-100">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span>🛒</span> Вашата количка
+                </h3>
+                <button onclick="toggleCartModal()" class="text-slate-400 hover:text-slate-700 p-2 rounded-lg cursor-pointer">
+                    ✕
+                </button>
+            </div>
+            
+            <div id="modal-cart-items" class="py-4 space-y-3 overflow-y-auto max-h-[60vh]">
+                <!-- Динамично зареждане -->
+            </div>
+        </div>
+
+        <div class="border-t border-amber-100 pt-4">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-medium text-slate-600">Обща сума:</span>
+                <span id="modal-cart-total" class="text-2xl font-bold text-amber-700">0 €</span>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="toggleCartModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-3 rounded-xl transition cursor-pointer text-sm">
+                    Продължи пазаруването
+                </button>
+                <a href="cart.html" class="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 rounded-xl transition text-center cursor-pointer text-sm shadow-md">
+                    Към количката
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Футър -->
+    <footer class="bg-white border-t border-amber-200/60 py-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 AstroConsult. Всички права запазени.</p>
+    </footer>
+
+    <!-- Общ скрипт за количката -->
+    <script>
+        let cart = [];
+        function updateCartUI() {
+            const count = cart.length;
+            const topEl = document.getElementById('cart-count-top');
+            const floatEl = document.getElementById('cart-count-floating');
+            if(topEl) topEl.innerText = count;
+            if(floatEl) floatEl.innerText = count;
+        }
+        function toggleCart() {
+            if (cart.length === 0) {
+                alert('Количката ви е празна.');
+            } else {
+                let itemsList = cart.map(item => `- ${item.name} (${item.price} лв.)`).join('\n');
+                let total = cart.reduce((sum, item) => sum + item.price, 0);
+                alert(`Вашата количка:\n\n${itemsList}\n\nОбща сума: ${total} лв.`);
+            }
+        }
+    </script>
+    <script>
+    // Обновяване на броячите при зареждане на страницата
+    function updateAllCounters() {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        let count = cartData.length;
+        
+        let topCounter = document.getElementById('cart-count-top');
+        let floatingCounter = document.getElementById('cart-count-floating');
+        
+        if (topCounter) topCounter.innerText = count;
+        if (floatingCounter) floatingCounter.innerText = count;
+    }
+
+    document.addEventListener('DOMContentLoaded', updateAllCounters);
+
+    // Отваряне и затваряне на страничния панел (drawer)
+    function toggleCartModal() {
+        const modal = document.getElementById('cart-modal');
+        const content = document.getElementById('cart-modal-content');
+        
+        if (modal.classList.contains('hidden')) {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('translate-x-full');
+            }, 10);
+            renderModalCartItems();
+        } else {
+            content.classList.add('translate-x-full');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    }
+
+    // Рендване на продуктите вътре в модала
+    function renderModalCartItems() {
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            let container = document.getElementById('modal-cart-items');
+            let totalElement = document.getElementById('modal-cart-total');
+            
+            let total = 0;
+            let htmlContent = ''; // Събираме всичко тук предварително
+
+            if (cartData.length === 0) {
+                htmlContent = '<p class="text-slate-500 text-center py-8 text-sm">Количката ви е празна.</p>';
+            } else {
+                cartData.forEach((item, index) => {
+                    total += Number(item.price);
+                    htmlContent += `
+                        <div class="flex justify-between items-center bg-amber-50/50 border border-amber-100 p-3.5 rounded-xl">
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm">${item.title}</h4>
+                                <span class="text-amber-700 font-bold text-sm">${item.price} €</span>
+                            </div>
+                            <button onclick="event.stopPropagation(); removeItemFromCart(${index})" class="text-red-400 hover:text-red-600 p-1.5 transition cursor-pointer" title="Премахни">
+                                🗑️
+                            </button>
+                        </div>
+                    `;
+                });
+            }
+
+            // Задаваме готовият HTML наведнъж, без да чупим DOM елементите по време на цикъла
+            container.innerHTML = htmlContent;
+            if (totalElement) {
+                totalElement.innerText = total + ' €';
+            }
+        }
+
+    // Премахване на артикул от количката през модала
+    function removeItemFromCart(index) {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        cartData.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartData));
+        updateAllCounters();
+        renderModalCartItems();
+    }
+    // Функция за затваряне при клик извън белия панел
+function handleOutsideClick(event) {
+    const modalContent = document.getElementById('cart-modal-content');
+    
+    // Проверяваме дали кликът е направен директно върху тъмния фон (а не вътре в белия панел)
+    if (!modalContent.contains(event.target)) {
+        toggleCartModal();
+    }
+}
+// Функция за отваряне/затваряне на мобилното меню
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+    } else {
+        menu.classList.add('hidden');
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Езикът на цветовете | AstroConsult</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-amber-50/40 via-stone-50 to-amber-50/20 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Навигация -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-200/60 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-wider text-amber-700 uppercase flex items-center gap-2">
+                <span class="text-amber-500 text-xl">✦</span> Astro<span class="text-slate-700">Consult</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-10 text-base font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">Начало</a>
+                
+                <!-- Падащо меню за Услуги -->
+                <div class="relative group py-4">
+                    <a href="index.html#services" class="hover:text-amber-700 transition flex items-center gap-1.5 py-2">
+                        Услуги
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 w-72 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="godishen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Годишен хороскоп</a>
+                        <a href="karmichen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп</a>
+                        <a href="karmichen-i-prognoza.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп и прогноза</a>
+                        <a href="partnerski-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Партньорски хороскоп</a>
+                        <a href="horoskop-6-meseca.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Хороскоп за 6 месеца</a>
+                    </div>
+                </div>
+
+                <a href="za-men.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">За мен</a>
+
+                <!-- Падащо меню за Интересно -->
+                <div class="relative group py-4">
+                    <button class="text-amber-700 transition flex items-center gap-1.5 cursor-pointer py-2 font-bold">
+                        Интересно
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 w-64 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="astrologiya.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Астрология</a>
+                        <a href="lubopitno.html" class="block px-5 py-3 text-sm text-amber-800 bg-amber-50 transition font-bold">Любопитно</a>
+                        <a href="ascedent-i-relokacii.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Асцедент и релокации</a>
+                        <a href="tarot.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Карти Таро</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="cart.html" class="relative bg-amber-50 hover:bg-amber-100 text-amber-900 px-4 py-2.5 rounded-full font-semibold text-sm flex items-center space-x-2 transition border border-amber-300 shadow-xs cursor-pointer no-underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span class="hidden sm:inline">Количка</span>
+                    <span id="cart-count-top" class="bg-amber-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+                </a>
+
+                <!-- Бутон за мобилно меню (Бургер) -->
+                <button onclick="toggleMobileMenu()" class="md:hidden bg-amber-50 hover:bg-amber-100 text-amber-900 p-2.5 rounded-full border border-amber-300 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобилно меню (скрито по подразбиране) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-amber-200 px-6 py-4 space-y-3 shadow-lg">
+        <a href="index.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5">Начало</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Услуги:</p>
+            <a href="godishen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Годишен хороскоп</a>
+            <a href="karmichen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп</a>
+            <a href="karmichen-i-prognoza.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп и прогноза</a>
+            <a href="partnerski-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Партньорски хороскоп</a>
+            <a href="horoskop-6-meseca.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Хороскоп за 6 месеца</a>
+        </div>
+        <a href="za-men.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5 border-t border-amber-100 pt-2">За мен</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Интересно:</p>
+            <a href="astrologiya.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Астрология</a>
+            <a href="lubopitno.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Любопитно</a>
+            <a href="ascedent-i-relokacii.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Асцедент и релокации</a>
+            <a href="tarot.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Карти Таро</a>
+        </div>
+    </div>
+
+    <!-- Съдържание на статията -->
+    <main class="flex-grow py-16 px-4 max-w-4xl mx-auto">
+        <article class="bg-white border border-amber-200/80 rounded-3xl p-8 sm:p-12 shadow-xl">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="bg-amber-100 text-amber-800 font-semibold text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-amber-300">Хромотерапия</span>
+                <span class="text-slate-400 text-sm">~ 7 мин четене</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">Езикът на цветовете: как изборът на цвят разкрива състоянието на ума и тялото ни</h1>
+            
+            <div class="relative rounded-2xl overflow-hidden mb-8 aspect-[16/9] border border-amber-200">
+                <img src="https://i.postimg.cc/MpY6JK7V/4.jpg" alt="Езикът на цветовете" class="w-full h-full object-cover">
+            </div>
+
+            <div class="prose max-w-none text-slate-600 space-y-6 text-lg leading-relaxed">
+                <p>
+                    Цветовете не са просто част от заобикалящия ни свят — те са енергия, която въздейства върху ума, емоциите и дори тялото ни. Всеки цвят носи определена честота и вибрация, които могат да стимулират, успокояват или балансират нашето вътрешно състояние. Неслучайно казваме, че някой <span class="italic text-amber-800">„се чувства син“</span> или <span class="italic text-amber-800">„гори от червено настроение“</span>.
+                </p>
+
+                <p>
+                    Изборът на определен цвят не е случаен – той често подсказва какво ни липсва, от какво имаме нужда или към какво подсъзнателно се стремим. Разбирането на този <span class="text-amber-700 font-semibold">„цветен език“</span> може да ни помогне да подобрим психическото си равновесие и физическото си здраве.
+                </p>
+
+                <div class="bg-amber-50/80 border border-amber-200/90 rounded-2xl p-6 my-6 shadow-sm">
+                    <p class="font-medium text-amber-950 text-base">
+                        Концентрирайте се, вслушайте се в интуицията си, усещанията си! Изберете един цвят, който предпочитате най-силно сега, между: <strong class="text-amber-800">червено, оранжево, жълто, зелено, синьо, лилаво, бяло и черно</strong>. Вижте какво подсказва този избор за вас към настоящия момент!
+                    </p>
+                </div>
+
+                <!-- 1. Червено -->
+                <div class="bg-white border border-red-200 rounded-2xl p-6 shadow-sm space-y-3">
+                    <h3 class="text-2xl font-bold text-red-700 flex items-center gap-2">
+                        <span class="w-4 h-4 rounded-full bg-red-600 inline-block"></span> Червено – енергия, страст и жизнена сила
+                    </h3>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Какво означава, ако го избирате:</strong>
+                        <p class="text-slate-600 text-base">Търсите действие, движение и увереност. Червеното показва нужда от енергия, решителност и физическа активност. Избират го хора, които са смели, импулсивни или в период на промяна.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Психически и физически баланс:</strong>
+                        <p class="text-slate-600 text-base">Червеното стимулира кръвообращението и повишава жизнения тонус, но в излишък може да води до раздразнение или напрежение.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">От какво имате нужда:</strong>
+                        <p class="text-slate-600 text-base">От умереност и дълбоко дишане. Комбинирайте червено с малко зелено или синьо, за да смекчите огъня.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Как да си помогнете:</strong>
+                        <p class="text-slate-600 text-base">Разхождайте се сред природата, спортувайте, но не прекалявайте с кофеина.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Оранжево -->
+                <div class="bg-white border border-orange-200 rounded-2xl p-6 shadow-sm space-y-3">
+                    <h3 class="text-2xl font-bold text-orange-600 flex items-center gap-2">
+                        <span class="w-4 h-4 rounded-full bg-orange-500 inline-block"></span> Оранжево – радост, творчество и общуване
+                    </h3>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Какво означава:</strong>
+                        <p class="text-slate-600 text-base">Ако ви привлича оранжевото, търсите лекота и позитивна промяна. Цветът излъчва топлина и желание за живот. Избират го хора с нужда от общуване, близост и изразяване на чувства.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Баланс:</strong>
+                        <p class="text-slate-600 text-base">Оранжевото стимулира храносмилането и имунната система, но прекаляването с него може да създаде усещане за нервност.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Нужда:</strong>
+                        <p class="text-slate-600 text-base">От хармония в отношенията и време за радост.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Как да си помогнете:</strong>
+                        <p class="text-slate-600 text-base">Слушайте музика, смейте се, танцувайте. Давайте си повече поводи за удоволствие и движение.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Жълто -->
+                <div class="bg-white border border-yellow-200 rounded-2xl p-6 shadow-sm space-y-3">
+                    <h3 class="text-2xl font-bold text-yellow-600 flex items-center gap-2">
+                        <span class="w-4 h-4 rounded-full bg-yellow-500 inline-block"></span> Жълто – ум, яснота и оптимизъм
+                    </h3>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Какво означава:</strong>
+                        <p class="text-slate-600 text-base">Жълтото показва желание за яснота, интелектуална активност и увереност в себе си. Привлича хора, които искат да вземат решения и да върнат радостта в живота си.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Баланс:</strong>
+                        <p class="text-slate-600 text-base">Жълтото активира нервната система и подобрява концентрацията, но при прекаляване може да доведе до безпокойство.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Нужда:</strong>
+                        <p class="text-slate-600 text-base">От мярка и спокойствие.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Как да си помогнете:</strong>
+                        <p class="text-slate-600 text-base">Почивайте очите си, бъдете на слънце умерено и си позволявайте паузи от мисленето – просто „бъдете“.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Зелено -->
+                <div class="bg-white border border-emerald-200 rounded-2xl p-6 shadow-sm space-y-3">
+                    <h3 class="text-2xl font-bold text-emerald-700 flex items-center gap-2">
+                        <span class="w-4 h-4 rounded-full bg-emerald-600 inline-block"></span> Зелено – равновесие, растеж и спокойствие
+                    </h3>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Какво означава:</strong>
+                        <p class="text-slate-600 text-base">Търсите баланс и вътрешен мир. Зеленото е цветът на природата и сърдечната енергия. Избират го хора, които имат нужда от стабилност и хармония.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Баланс:</strong>
+                        <p class="text-slate-600 text-base">Зеленото уравновесява кръвното налягане и успокоява нервната система. Липсата му може да доведе до чувство на вътрешно напрежение или завист.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Нужда:</strong>
+                        <p class="text-slate-600 text-base">От природа, пространство и дишане.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Как да си помогнете:</strong>
+                        <p class="text-slate-600 text-base">Разхождайте се в паркове, обградете се със зелени растения, дишайте дълбоко.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Синьо -->
+                <div class="bg-white border border-blue-200 rounded-2xl p-6 shadow-sm space-y-3">
+                    <h3 class="text-2xl font-bold text-blue-600 flex items-center gap-2">
+                        <span class="w-4 h-4 rounded-full bg-blue-500 inline-block"></span> Синьо – покой, доверие и истина
+                    </h3>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Какво означава:</strong>
+                        <p class="text-slate-600 text-base">Избират го хора, които търсят сигурност, духовност или спокойствие. Синьото е цвят на дълбочината и мъдростта.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Баланс:</strong>
+                        <p class="text-slate-600 text-base">Синьото забавя пулса и понижава напрежението, но в прекалени количества може да предизвика дистанцираност или студенина.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Нужда:</strong>
+                        <p class="text-slate-600 text-base">От изразяване на чувства и повече човешка топлина.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Как да си помогнете:</strong>
+                        <p class="text-slate-600 text-base">Споделяйте. Не потискайте емоциите си – говорете, творете, обичайте.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Лилаво -->
+                <div class="bg-white border border-purple-200 rounded-2xl p-6 shadow-sm space-y-3">
+                    <h3 class="text-2xl font-bold text-purple-700 flex items-center gap-2">
+                        <span class="w-4 h-4 rounded-full bg-purple-600 inline-block"></span> Лилаво – интуиция, дълбочина и трансформация
+                    </h3>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Какво означава:</strong>
+                        <p class="text-slate-600 text-base">Лилавото показва нужда от духовно развитие или промяна. То е цветът на въображението и интуицията.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Баланс:</strong>
+                        <p class="text-slate-600 text-base">Лилавото успокоява нервната система и стимулира творческия потенциал, но прекаленото му присъствие може да доведе до отдалечаване от реалността.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Нужда:</strong>
+                        <p class="text-slate-600 text-base">От заземяване и практичност.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Как да си помогнете:</strong>
+                        <p class="text-slate-600 text-base">Прекарвайте време с близките си, правете нещо с ръцете си – готвене, градинарство, рисуване.</p>
+                    </div>
+                </div>
+
+                <!-- 7. Бяло -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-3">
+                    <h3 class="text-2xl font-bold text-slate-700 flex items-center gap-2">
+                        <span class="w-4 h-4 rounded-full bg-slate-300 border border-slate-400 inline-block"></span> Бяло – чистота, яснота и ново начало
+                    </h3>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Какво означава:</strong>
+                        <p class="text-slate-600 text-base">Ако избирате бялото, вероятно търсите нов старт или освобождаване от тежест. Цветът носи лекота, но понякога и чувство на изолация.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Баланс:</strong>
+                        <p class="text-slate-600 text-base">Бялото изчиства ума и насърчава концентрацията. При прекалена употреба обаче може да създаде усещане за празнота.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Как да си помогнете:</strong>
+                        <p class="text-slate-600 text-base">Внесете малко цвят в ежедневието – символ на живот и движение.</p>
+                    </div>
+                </div>
+
+                <!-- 8. Черно -->
+                <div class="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm space-y-3">
+                    <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                        <span class="w-4 h-4 rounded-full bg-slate-900 inline-block"></span> Черно – сила, защита и вътрешна дълбочина
+                    </h3>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Какво означава:</strong>
+                        <p class="text-slate-600 text-base">Черното не е просто липса на цвят – то е символ на граници и самоконтрол. Избират го хора, които искат да се защитят или преосмислят себе си.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Баланс:</strong>
+                        <p class="text-slate-600 text-base">Помага за фокус и концентрация, но прекаленото му присъствие може да доведе до затвореност и тъга.</p>
+                    </div>
+                    <div>
+                        <strong class="text-slate-900 text-sm uppercase tracking-wider block mb-1">Как да си помогнете:</strong>
+                        <p class="text-slate-600 text-base">Добавете малко светлина – буквално и символично. Носете черно с цвят, който ви радва.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-amber-100 flex items-center justify-between">
+                <a href="lubopitno.html" class="text-amber-700 font-bold hover:underline flex items-center gap-2">
+                    ← Обратно към Любопитно
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Плаващ бутон за количка долу в дясно -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <button onclick="toggleCartModal()" class="relative bg-amber-600 hover:bg-amber-700 text-white p-4 rounded-full shadow-xl flex items-center justify-center transition cursor-pointer border-2 border-amber-300" title="Отвори количката">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <span id="cart-count-floating" class="absolute -top-1 -right-1 bg-slate-900 text-amber-400 text-xs w-6 h-6 rounded-full font-bold flex items-center justify-center border-2 border-white shadow-xs">0</span>
+    </button>
+</div>
+
+<!-- Страничен панел (Модал / Drawer) за количката -->
+<div id="cart-modal" onclick="handleOutsideClick(event)" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-xs flex justify-end transition-opacity">
+    <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between p-6 transform transition-transform translate-x-full" id="cart-modal-content">
+        <div>
+            <div class="flex items-center justify-between pb-4 border-b border-amber-100">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span>🛒</span> Вашата количка
+                </h3>
+                <button onclick="toggleCartModal()" class="text-slate-400 hover:text-slate-700 p-2 rounded-lg cursor-pointer">
+                    ✕
+                </button>
+            </div>
+            
+            <div id="modal-cart-items" class="py-4 space-y-3 overflow-y-auto max-h-[60vh]">
+                <!-- Динамично зареждане -->
+            </div>
+        </div>
+
+        <div class="border-t border-amber-100 pt-4">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-medium text-slate-600">Обща сума:</span>
+                <span id="modal-cart-total" class="text-2xl font-bold text-amber-700">0 €</span>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="toggleCartModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-3 rounded-xl transition cursor-pointer text-sm">
+                    Продължи пазаруването
+                </button>
+                <a href="cart.html" class="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 rounded-xl transition text-center cursor-pointer text-sm shadow-md">
+                    Към количката
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Футър -->
+    <footer class="bg-white border-t border-amber-200/60 py-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 AstroConsult. Всички права запазени.</p>
+    </footer>
+
+    <!-- Общ скрипт за количката -->
+    <script>
+        let cart = [];
+        function updateCartUI() {
+            const count = cart.length;
+            const topEl = document.getElementById('cart-count-top');
+            const floatEl = document.getElementById('cart-count-floating');
+            if(topEl) topEl.innerText = count;
+            if(floatEl) floatEl.innerText = count;
+        }
+        function toggleCart() {
+            if (cart.length === 0) {
+                alert('Количката ви е празна.');
+            } else {
+                let itemsList = cart.map(item => `- ${item.name} (${item.price} лв.)`).join('\n');
+                let total = cart.reduce((sum, item) => sum + item.price, 0);
+                alert(`Вашата количка:\n\n${itemsList}\n\nОбща сума: ${total} лв.`);
+            }
+        }
+    </script>
+    <script>
+    // Обновяване на броячите при зареждане на страницата
+    function updateAllCounters() {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        let count = cartData.length;
+        
+        let topCounter = document.getElementById('cart-count-top');
+        let floatingCounter = document.getElementById('cart-count-floating');
+        
+        if (topCounter) topCounter.innerText = count;
+        if (floatingCounter) floatingCounter.innerText = count;
+    }
+
+    document.addEventListener('DOMContentLoaded', updateAllCounters);
+
+    // Отваряне и затваряне на страничния панел (drawer)
+    function toggleCartModal() {
+        const modal = document.getElementById('cart-modal');
+        const content = document.getElementById('cart-modal-content');
+        
+        if (modal.classList.contains('hidden')) {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('translate-x-full');
+            }, 10);
+            renderModalCartItems();
+        } else {
+            content.classList.add('translate-x-full');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    }
+
+    // Рендване на продуктите вътре в модала
+    function renderModalCartItems() {
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            let container = document.getElementById('modal-cart-items');
+            let totalElement = document.getElementById('modal-cart-total');
+            
+            let total = 0;
+            let htmlContent = ''; // Събираме всичко тук предварително
+
+            if (cartData.length === 0) {
+                htmlContent = '<p class="text-slate-500 text-center py-8 text-sm">Количката ви е празна.</p>';
+            } else {
+                cartData.forEach((item, index) => {
+                    total += Number(item.price);
+                    htmlContent += `
+                        <div class="flex justify-between items-center bg-amber-50/50 border border-amber-100 p-3.5 rounded-xl">
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm">${item.title}</h4>
+                                <span class="text-amber-700 font-bold text-sm">${item.price} €</span>
+                            </div>
+                            <button onclick="event.stopPropagation(); removeItemFromCart(${index})" class="text-red-400 hover:text-red-600 p-1.5 transition cursor-pointer" title="Премахни">
+                                🗑️
+                            </button>
+                        </div>
+                    `;
+                });
+            }
+
+            // Задаваме готовият HTML наведнъж, без да чупим DOM елементите по време на цикъла
+            container.innerHTML = htmlContent;
+            if (totalElement) {
+                totalElement.innerText = total + ' €';
+            }
+        }
+
+    // Премахване на артикул от количката през модала
+    function removeItemFromCart(index) {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        cartData.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartData));
+        updateAllCounters();
+        renderModalCartItems();
+    }
+    // Функция за затваряне при клик извън белия панел
+function handleOutsideClick(event) {
+    const modalContent = document.getElementById('cart-modal-content');
+    
+    // Проверяваме дали кликът е направен директно върху тъмния фон (а не вътре в белия панел)
+    if (!modalContent.contains(event.target)) {
+        toggleCartModal();
+    }
+}
+// Функция за отваряне/затваряне на мобилното меню
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+    } else {
+        menu.classList.add('hidden');
+    }
+}
+</script>
+</body>
+</html>

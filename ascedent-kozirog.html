@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Асцендент Козирог в натална карта и при релокация | AstroConsult</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-amber-50/40 via-stone-50 to-amber-50/20 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Навигация -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-200/60 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-wider text-amber-700 uppercase flex items-center gap-2">
+                <span class="text-amber-500 text-xl">✦</span> Astro<span class="text-slate-700">Consult</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-10 text-base font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">Начало</a>
+                
+                <!-- Падащо меню за Услуги -->
+                <div class="relative group py-4">
+                    <a href="index.html#services" class="hover:text-amber-700 transition flex items-center gap-1.5 py-2">
+                        Услуги
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 w-72 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="godishen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Годишен хороскоп</a>
+                        <a href="karmichen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп</a>
+                        <a href="karmichen-i-prognoza.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп и прогноза</a>
+                        <a href="partnerski-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Партньорски хороскоп</a>
+                        <a href="horoskop-6-meseca.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Хороскоп за 6 месеца</a>
+                    </div>
+                </div>
+
+                <a href="za-men.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">За мен</a>
+
+                <!-- Падащо меню за Интересно -->
+                <div class="relative group py-4">
+                    <button class="text-amber-700 transition flex items-center gap-1.5 cursor-pointer py-2 font-bold">
+                        Интересно
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 w-64 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="astrologiya.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Астрология</a>
+                        <a href="lubopitno.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Любопитно</a>
+                        <a href="ascedent-i-relokacii.html" class="block px-5 py-3 text-sm text-amber-800 bg-amber-50 transition font-bold">Асцедент и релокации</a>
+                        <a href="tarot.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Карти Таро</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="cart.html" class="relative bg-amber-50 hover:bg-amber-100 text-amber-900 px-4 py-2.5 rounded-full font-semibold text-sm flex items-center space-x-2 transition border border-amber-300 shadow-xs cursor-pointer no-underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span class="hidden sm:inline">Количка</span>
+                    <span id="cart-count-top" class="bg-amber-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+                </a>
+
+                <!-- Бутон за мобилно меню (Бургер) -->
+                <button onclick="toggleMobileMenu()" class="md:hidden bg-amber-50 hover:bg-amber-100 text-amber-900 p-2.5 rounded-full border border-amber-300 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобилно меню (скрито по подразбиране) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-amber-200 px-6 py-4 space-y-3 shadow-lg">
+        <a href="index.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5">Начало</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Услуги:</p>
+            <a href="godishen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Годишен хороскоп</a>
+            <a href="karmichen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп</a>
+            <a href="karmichen-i-prognoza.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп и прогноза</a>
+            <a href="partnerski-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Партньорски хороскоп</a>
+            <a href="horoskop-6-meseca.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Хороскоп за 6 месеца</a>
+        </div>
+        <a href="za-men.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5 border-t border-amber-100 pt-2">За мен</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Интересно:</p>
+            <a href="astrologiya.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Астрология</a>
+            <a href="lubopitno.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Любопитно</a>
+            <a href="ascedent-i-relokacii.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Асцедент и релокации</a>
+            <a href="tarot.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Карти Таро</a>
+        </div>
+    </div>
+
+    <!-- Съдържание на статията -->
+    <main class="flex-grow py-16 px-4 max-w-4xl mx-auto">
+        <article class="bg-white border border-amber-200/80 rounded-3xl p-8 sm:p-12 shadow-xl">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="bg-amber-100 text-amber-800 font-semibold text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-amber-300">Асцедент Козирог</span>
+                <span class="text-slate-400 text-sm">~ 15 мин четене</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">Асцендент Козирог в натална карта и при релокация</h1>
+            
+            <div class="h-48 bg-gradient-to-br from-amber-500/10 via-amber-200/20 to-amber-600/10 flex items-center justify-center border border-amber-200 rounded-2xl mb-8">
+                <span class="text-7xl text-amber-700 font-serif">♑</span>
+            </div>
+
+            <div class="prose max-w-none text-slate-600 space-y-6 text-lg leading-relaxed">
+                <p>
+                    С този Асцендент вашите амбиции ще се усилят в пъти. Козирог е символ на придобития авторитет, на стабилността, на успеха и на добрия социален статус…
+                </p>
+
+                <p class="bg-amber-50/70 border border-amber-200/80 p-5 rounded-2xl text-slate-700">
+                    Всички тези теми постепенно и по един естествен начин ще се превърнат във водещ мотив във вашия живот. Паралелно с това вие все повече ще осъзнавате необходимостта <span class="text-amber-700 font-semibold">да поемате отговорности, да бъдете по-концентрирани и мобилизирани</span>, защото съзнавате, че нищо в този живот не идва даром.
+                </p>
+
+                <p>
+                    В друг случай променените нагласи в живота ще дойдат от увеличаващата се предразположеност да се тревожите дори и за по-дребни предизвикателства, които ще ви дестабилизират и ще направят бъдещето ви неясно или безперспективно. С Асцендент Козирог вие определено ще започнете да се взирате и в по-далечното бъдеще, ще се придържате към правилото: „нека в живота сезонът да е лято, но ако дойде зимата – да сме подготвени”… Нека да припомним, че Козирог владее едни от най-суровите месеци през годината и само с качества като неговите може да се оцелее през това време. Това е асоциативна препратка, която обяснява, че с този Асцендент вие ще сте все по-подготвени за своеобразни трудности, защото реално ескалират такива обстоятелства или понеже вашите нагласи и виждания са такива… Но каквото и да е – вие ще калите характера си и ще придобиете качества, които никой не може да ви вземе.
+                </p>
+
+                <p>
+                    Асцендентът Козирог не обича да експериментира, не поема излишни рискове, но се отличава с упорство и лидерски способности, които се отключват, надграждат и по един естествен начин стъпка по стъпка изкачват личността нагоре и към поставена цел – най-често свързана с отлични обществено значими или управленски позиции.
+                </p>
+
+                <p>
+                    Светът на Козирог най-често е изпълнен с предизвикателства, които са от типа на онези, с които се срещаме, когато трябва да изкачим една планина и да се доберем до набелязания връх. А да, да подчертая – винаги ще има върхове за изкачване, които ще привличат вниманието ви неудържимо и ще бележат избрания от вас път…
+                </p>
+
+                <p>
+                    В известна степен успехите на хора с Асцендент Козирог са гарантирани, стига личността да не е слаб характер и с лошо поставен Сатурн – тогава този Асцендент може да го „смачка“ под изискванията и тежестта си…
+                </p>
+
+                <p>
+                    Освен това бързи успехи не могат да се очакват, но бавни – и следствие на натрупан опит и авторитет – да.
+                </p>
+
+                <p>
+                    В каква сфера ще трябва да полагате повече усилия, да придобивате качества и да проявявате упорство разбирате от това къде се намира Сатурн (управителят на Козирог).
+                </p>
+
+                <h2 class="text-3xl font-bold text-slate-900 pt-6 border-t border-amber-200/60">Сатурн по домове при Асцендент Козирог</h2>
+
+                <!-- 1 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Сатурн в 1 дом</h3>
+                    <p class="text-slate-600">Ако искате да развиете вашата упоритост, да се научите да носите повече отговорности, както и да станете по-самостоятелни, независими и устойчиви на външни влияния, тогава Сатурн ще ви помогне в тази посока, ако е добре аспектиран. Вие ще демонстрирате пред околните известен консерватизъм, но и надеждност, ще успявате да защитавате гледната си точка и интереси, осланяйки се на опит и знания. Вие ще вдъхвате доверие, но и респект; не е изключено да създадете една невидима граница между вас и околните, която никой няма да може да премине, така че да ви накърни. С този Асцендент вие ще владеете себе си все повече, а по този начин (както се казва) ще можете да владеете и света, като бъдете определящ фактор за собствения си живот, а често и за този на другите. Това безспорно е сила, но и отговорност, така че понякога може да имате усещането, че всички тежести са стоварени върху вас. Ако Сатурн е в напрегнати аспекти, тогава е по-добре да си изберете друг Асцендент, защото може да се превърнете в огорчен егоист или постоянно да се изправяте пред трудности, които ще се отразят и на физическото и емоционалното ви здраве.</p>
+                </div>
+
+                <!-- 2 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Сатурн във 2 дом</h3>
+                    <p class="text-slate-600">Финансовата стабилност ще се превърне във водещ мотив и цел във вашия живот. Вие ще развиете отличен финансов усет, но ще се стремите към надеждни и дългосрочни доходи. Може печалбите да не идват спонтанно и веднага в живота ви, но с натрупването на опит и авторитет източниците на печалба ще стават все по-устойчиви и такива, които никой не може да ви вземе. Не може да се каже, че ще получавате подаръци от живота, но ако Сатурн е добре аспектиран, вие бавно и сигурно ще имате шанс да натрупате богатство или поне ще имате регулярни (дори и да не са твърде високи) доходи. Ако търсите материална сигурност, Сатурн ще помогне в това направление, но както казах вече – не даром, а в следствие на собствените ви качества, които ще бъдат материализирани и реализирани на практика. Възможно е да полагате и повече усилия, така че да бъдете по-здрави, защото няма по-голяма ценност от здравето. Ако Сатурн е в напрегнати аспекти, тогава перманентно ще се сблъсквате със затруднения при придобиване на онова, което желаете, може да изпаднете в нищета и е по-добре да си изберете друг Асцендент.</p>
+                </div>
+
+                <!-- 3 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Сатурн в 3 дом</h3>
+                    <p class="text-slate-600">Това положение на Сатурн ще ви помогне да се концентрирате и ще има благоприятно въздействие върху вашата памет. Вие ще сте по-склонни да се придържате към фактите, а не към красивите думи, и ще бъде много трудно някой да ви подведе или излъже. Ще се фокусирате само върху въпроси и идеи, които могат да допринесат за по-доброто ви бъдещо развитие, без да се оставяте емоциите да ви водят. Дисциплината на вашия ум ще се превръща във водещ фактор, който ще даде направление на всички останали сфери от живота. Ще се стремите да създавате контакти предимно с хора, от които можете да научите нещо и които са вид авторитети в собствените ви представи. Така вие няма да допускате лесно хора до себе си, но малцината, които ще се радват на вашата компания, ще бъдат избрани, способни да допринесат за вашия собствен престиж и по-добри позиции. Вие ще усъвършенствате комуникативните си умения така, че да накарате околните да ви слушат и да се съобразяват с вашата гледна точка. Авторитетът и стабилните социални позиции, към които се стремите, ще можете да придобиете чрез ораторските си способности, начина на мислене, изразяване, знанията и връзките, които създавате. Ако Сатурн е в напрегнати аспекти, точно обратното – не е изключено да дразните околните или да липсва добра комуникация, което ще ви въвлича в постоянни конфликти и неразбирателство с близкото ви обкръжение.</p>
+                </div>
+
+                <!-- 4 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Сатурн в 4 дом</h3>
+                    <p class="text-slate-600">Ако искате да сте лидер у дома и вие да „диктувате правилата на играта“ в семейството си, значи това е правилната позиция, при условие че Сатурн е добре аспектиран. В друг случай това е подходящо положение за онези, които имат намерение да се занимават с недвижимо имущество или могат да се развиват кариерно чрез семеен бизнес, извършвайки част от дейността си у дома. Въпреки всичко Сатурн ще е повод за известно натоварване, което ще усещате като отговорност спрямо близките си и спрямо чисто битови приоритети. Ако Сатурн е в напрегнати аспекти, тогава вашето семейно благополучие ще бъде сериозно нарушено – може да ескалират недоразумения, своеобразна борба за надмощие и прекалено тежки отговорности за член от семейството. Тогава е по-добре да си изберете друг асцендент.</p>
+                </div>
+
+                <!-- 5 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Сатурн в 5 дом</h3>
+                    <p class="text-slate-600">Това положение на Сатурн ще ви помогне да овладеете емоционалните си преживявания. Вие няма да допускате лесно някой в сърцето си – първо ще го преценявате по един хладен и безпристрастен начин (например доколко отсрещната страна е надеждна и перспективна). Нямате търпение към нелоялността, но за сметка на това, ако се обвържете, самите вие ще проявявате постоянство, което ще буди уважение и ще заздравява отношенията ви. Въпреки всичко с това положение на Сатурн вие понякога ще изглеждате в очите на близките си по-хладни, недостъпни, неемоционални, а в по-крайни форми – егоисти. Вие пък ще приемате, че близките до сърцето ви хора (партньори, пораснали деца) освен всичко друго са и отговорност, която ви натоварва, и ще пестите емоционалните, физическите или финансовите си ресурси, без да позволявате да се преминават определени граници. Тази позиция е добра, ако желаете да се реализирате като преподавател, да имате собствен бизнес или да реализирате целия си потенциал в собствени или чужди проекти, но там, където можете да утвърдите авторитета си и да заемете лидерски позиции. С това положение вашето Его и независимост няма да понасят вмешателство и вие ще сте или на свободна практика, или управленци в чуждо предприятие. Ако Сатурн е в напрегнати аспекти, чувството на самота може да стане смазващо и прекалено голямо бреме.</p>
+                </div>
+
+                <!-- 6 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Сатурн в 6 дом</h3>
+                    <p class="text-slate-600">Със Сатурн в 6 дом вие може да се превърнете в работохолици. Ще полагате системни усилия и упоритост, за да се докажете на работното място. Вашата работа може да е доста натоварена с ангажименти, но и резултатна. От вас ще се изискват големи служебни отговорности, но ако Сатурн е добре аспектиран, тогава причината ще бъде във вашите управленски позиции, престижни постове или естеството на самата работа – вие може да сте лидер и авторитет сред вашите колеги, който с времето и натрупването на опит и знания се налага и се превръща в незаменим, важен и определящ фактор, буден респект и уважение. Ако Сатурн е в напрегнати аспекти, тогава натовареността няма да дава желаните резултати, а по-скоро ще ви натоварва физически така, че може да пострада здравето ви, да се стигне до изтощение и неудовлетвореност.</p>
+                </div>
+
+                <!-- 7 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Сатурн в 7 дом</h3>
+                    <p class="text-slate-600">Ако се стремите да наложите авторитета си сред другите, да имате стабилна подкрепа от страна на влиятелни личности, по-възрастни или власт имащи фигури и да влизате в стабилни, дълготрайни и надеждни съюзи, то това е подходяща позиция. Със Сатурн в 7 дом вие внимателно ще преценявате кого допускате до себе си в личен и делови план. Ако Сатурн е добре аспектиран, тогава вие ще имате точна и реалистична преценка за другите и ще взаимодействате само с онези, които са перспективни, лоялни, сериозни, с добър социален статус и способни да допринесат за вашите собствени по-престижни обществени позиции. Това положение е подходящо за създаване на надеждни партньорски отношения. Надеждни партньорски отношения обаче не означава „лесни“ – напротив, независимо как е аспектиран Сатурн, важните за вас хора, с които се обвързвате, ще се превръщат в наши учители, с които трябва да се съобразявате; по различни поводи ще зависите повече от тях, но и ще се развивате чрез тях. Ако Сатурн е в напрегнати аспекти, тогава ще ви се струва, че съществувате във враждебна среда.</p>
+                </div>
+
+                <!-- 8 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Сатурн в 8 дом</h3>
+                    <p class="text-slate-600">Това положение ще развие у вас отличен финансов усет и вие ще знаете как да се възползвате от другите, така че да получавате от тях финансова или морална подкрепа. Това положение ще усили желанието ви за контрол и власт (буквално и в по-широкия смисъл) както върху важни за вас хора, които влияят на благоденствието ви, така и върху самите вас. Тихи, но силни и упорити страсти и желания, които владеят душата ви, ще се превръщат в повод перманентно да се развивате, променяте и да градите стратегии, така че да постигате своето. Когато си наумите нещо, почти никой или нищо няма да може да застане на пътя ви към своеобразна победа. Можете да се развиете добре в държавни, силови, финансови или други институции, които ще ви дадат финансова стабилност или престиж. Въпреки всичко животът ви ще е изпълнен с перманентни предизвикателства, които ще ви подтикват да овладявате вашите страсти. Към секса ще имате сериозно отношение или може да се сблъскате с някои затруднения и дори липса на стабилност и подозрителност, ако Сатурн не е добре аспектиран – в такъв случай постоянно ще се налага да плащате своеобразен данък или цена, за да задържите до себе си хора и обстоятелства.</p>
+                </div>
+
+                <!-- 9 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Сатурн в 9 дом</h3>
+                    <p class="text-slate-600">Вие ще имате сериозно отношение към бъдещото си развитие, а не лековато – тази позиция ще ви подтиква да увеличавате вашите знания и образование и чрез повишаване на квалификацията и собственото си развитие ще растете в социален план, като можете да заемете престижни постове. Това е отлична позиция за бавно, но сигурно изкачване по йерархичната стълбичка. Концентрирате се върху въпроси, които ще допринесат за моралното ви и духовно израстване. С тази позиция на Сатурн вие ще умеете да сглобявате по-цялостна, но и обективна картина на живота си, ще анализирате миналото и ще можете по практичен начин да предвиждате по-далечното бъдеще, така че да не се изгубите и да изберете най-правилното направление за развитие. Растежът при вас ще бъде плавен и умерен, няма да поемате излишни рискове. Ако Сатурн е добре аспектиран, тогава ще откриете стабилност и добра социална реализация в чужбина, при пътувания. При напрегнати аспекти съмненията ще опорочат вашите възгледи, трудно ще градите дълги връзки и перманентно ще усещате, че сте ограничен от външни обстоятелства, които не можете да преодолеете.</p>
+                </div>
+
+                <!-- 10 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Сатурн в 10 дом</h3>
+                    <p class="text-slate-600">По дом Сатурн тук ще е „на трон“, в най-голямата си сила, и изглежда, че вашият живот ще е стабилен и градивен – но не даром, а в следствие на упоритост, натрупан опит и авторитет и придобити качества, които демонстрирате и които се ценят по достойнство. Ако Сатурн е добре аспектиран, вашите лидерски или управленски позиции са почти гарантирани. Високите ви амбиции ще ви мобилизират, ще ви дърпат напред и нагоре и няма да ви дават покой, докато не постигнете своята висока цел, а след това ще се устремявате към друг връх. Ако Сатурн е в напрегнати аспекти, тогава дори и да се изкачите нагоре, пак ще съществува голяма вероятност да „паднете от високо“, а най-неприятното е, че може да се сблъсквате с трудности и предизвикателства на всички нива от живота.</p>
+                </div>
+
+                <!-- 11 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Сатурн в 11 дом</h3>
+                    <p class="text-slate-600">Вие ще се стремите към заемането на лидерски или управленски позиции в колектив и действително ще можете да заемете такива, ако Сатурн е добре аспектиран. В такъв случай вашето сериозно и отговорно поведение ще буди респект, уважение и доверие. Въпреки всичко прекалено сериозното ви отношение ще създава невидими граници между вас и околните. Вие самите ще допускате малцина до себе си, развивайки склонност да ги преценявате обективно, но и критично – според това доколко са лоялни, успешни, перспективни и способни да допринесат за вашия собствен престиж. Малцина ще допускате до себе си, но ако Сатурн е добре аспектиран, те действително ще се превръщат в мост към собствените ви успехи. Ако Сатурн е в напрегнати аспекти, тогава трудно ще виреете в колектив, а бъдещето ви ще изглежда някак по-страшно и несигурно, в черно-бели краски.</p>
+                </div>
+
+                <!-- 12 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Сатурн в 12 дом</h3>
+                    <p class="text-slate-600">Това е слаба позиция за Сатурн и независимо как е аспектиран, вашата сигурност ще е извън контрола ви, зависейки по-скоро от благосклонността на Съдбата или външни обстоятелства. Всичко постигнато до този момент с времето ще ерозира, а вие ще се сблъсквате с тайни врагове и обстоятелства; психиката ви ще е доста по-уязвима, както и физическото ви здраве. Ако Сатурн е добре аспектиран, трудностите, с които се сблъсквате, ще доведат до духовно израстване и способност да овладеете скрити пороци (ако ги имате), може да развиете интерес към благотворителност или да се реализирате добре чрез социално значими дейности и талант. Може да попаднете и под тайна опека, която да ви пази. При напрегнати аспекти трудно ще имате стабилност, може да се превърнете в асоциален тип или да сте застрашени от затваряне в институция, тяло или съзнание.</p>
+                </div>
+
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-amber-100 flex items-center justify-between">
+                <a href="ascedent-i-relokacii.html" class="text-amber-700 font-bold hover:underline flex items-center gap-2">
+                    ← Обратно към Асцедент и релокации
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Плаващ бутон за количка долу в дясно -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <button onclick="toggleCartModal()" class="relative bg-amber-600 hover:bg-amber-700 text-white p-4 rounded-full shadow-xl flex items-center justify-center transition cursor-pointer border-2 border-amber-300" title="Отвори количката">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <span id="cart-count-floating" class="absolute -top-1 -right-1 bg-slate-900 text-amber-400 text-xs w-6 h-6 rounded-full font-bold flex items-center justify-center border-2 border-white shadow-xs">0</span>
+    </button>
+</div>
+
+<!-- Страничен панел (Модал / Drawer) за количката -->
+<div id="cart-modal" onclick="handleOutsideClick(event)" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-xs flex justify-end transition-opacity">
+    <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between p-6 transform transition-transform translate-x-full" id="cart-modal-content">
+        <div>
+            <div class="flex items-center justify-between pb-4 border-b border-amber-100">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span>🛒</span> Вашата количка
+                </h3>
+                <button onclick="toggleCartModal()" class="text-slate-400 hover:text-slate-700 p-2 rounded-lg cursor-pointer">
+                    ✕
+                </button>
+            </div>
+            
+            <div id="modal-cart-items" class="py-4 space-y-3 overflow-y-auto max-h-[60vh]">
+                <!-- Динамично зареждане -->
+            </div>
+        </div>
+
+        <div class="border-t border-amber-100 pt-4">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-medium text-slate-600">Обща сума:</span>
+                <span id="modal-cart-total" class="text-2xl font-bold text-amber-700">0 €</span>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="toggleCartModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-3 rounded-xl transition cursor-pointer text-sm">
+                    Продължи пазаруването
+                </button>
+                <a href="cart.html" class="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 rounded-xl transition text-center cursor-pointer text-sm shadow-md">
+                    Към количката
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Футър -->
+    <footer class="bg-white border-t border-amber-200/60 py-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 AstroConsult. Всички права запазени.</p>
+    </footer>
+
+    <!-- Общ скрипт за количката -->
+    <script>
+        let cart = [];
+        function updateCartUI() {
+            const count = cart.length;
+            let topEl = document.getElementById('cart-count-top');
+            let floatEl = document.getElementById('cart-count-floating');
+            if(topEl) topEl.innerText = count;
+            if(floatEl) floatEl.innerText = count;
+        }
+        function toggleCart() {
+            if (cart.length === 0) {
+                alert('Количката ви е празна.');
+            } else {
+                let itemsList = cart.map(item => `- ${item.name} (${item.price} лв.)`).join('\n');
+                let total = cart.reduce((sum, item) => sum + item.price, 0);
+                alert(`Вашата количка:\n\n${itemsList}\n\nОбща сума: ${total} лв.`);
+            }
+        }
+    </script>
+    <script>
+    // Обновяване на броячите при зареждане на страницата
+    function updateAllCounters() {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        let count = cartData.length;
+        
+        let topCounter = document.getElementById('cart-count-top');
+        let floatingCounter = document.getElementById('cart-count-floating');
+        
+        if (topCounter) topCounter.innerText = count;
+        if (floatingCounter) floatingCounter.innerText = count;
+    }
+
+    document.addEventListener('DOMContentLoaded', updateAllCounters);
+
+    // Отваряне и затваряне на страничния панел (drawer)
+    function toggleCartModal() {
+        const modal = document.getElementById('cart-modal');
+        const content = document.getElementById('cart-modal-content');
+        
+        if (modal.classList.contains('hidden')) {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('translate-x-full');
+            }, 10);
+            renderModalCartItems();
+        } else {
+            content.classList.add('translate-x-full');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    }
+
+    // Рендване на продуктите вътре в модала
+    function renderModalCartItems() {
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            let container = document.getElementById('modal-cart-items');
+            let totalElement = document.getElementById('modal-cart-total');
+            
+            let total = 0;
+            let htmlContent = ''; // Събираме всичко тук предварително
+
+            if (cartData.length === 0) {
+                htmlContent = '<p class="text-slate-500 text-center py-8 text-sm">Количката ви е празна.</p>';
+            } else {
+                cartData.forEach((item, index) => {
+                    total += Number(item.price);
+                    htmlContent += `
+                        <div class="flex justify-between items-center bg-amber-50/50 border border-amber-100 p-3.5 rounded-xl">
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm">${item.title}</h4>
+                                <span class="text-amber-700 font-bold text-sm">${item.price} €</span>
+                            </div>
+                            <button onclick="event.stopPropagation(); removeItemFromCart(${index})" class="text-red-400 hover:text-red-600 p-1.5 transition cursor-pointer" title="Премахни">
+                                🗑️
+                            </button>
+                        </div>
+                    `;
+                });
+            }
+
+            // Задаваме готовият HTML наведнъж, без да чупим DOM елементите по време на цикъла
+            container.innerHTML = htmlContent;
+            if (totalElement) {
+                totalElement.innerText = total + ' €';
+            }
+        }
+
+    // Премахване на артикул от количката през модала
+    function removeItemFromCart(index) {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        cartData.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartData));
+        updateAllCounters();
+        renderModalCartItems();
+    }
+    // Функция за затваряне при клик извън белия панел
+function handleOutsideClick(event) {
+    const modalContent = document.getElementById('cart-modal-content');
+    
+    // Проверяваме дали кликът е направен директно върху тъмния фон (а не вътре в белия панел)
+    if (!modalContent.contains(event.target)) {
+        toggleCartModal();
+    }
+}
+// Функция за отваряне/затваряне на мобилното меню
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+    } else {
+        menu.classList.add('hidden');
+    }
+}
+</script>
+</body>
+</html>

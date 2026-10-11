@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Асцендент Близнаци в натална карта и при релокация | AstroConsult</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-amber-50/40 via-stone-50 to-amber-50/20 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Навигация -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-200/60 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-wider text-amber-700 uppercase flex items-center gap-2">
+                <span class="text-amber-500 text-xl">✦</span> Astro<span class="text-slate-700">Consult</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-10 text-base font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">Начало</a>
+                
+                <!-- Падащо меню за Услуги -->
+                <div class="relative group py-4">
+                    <a href="index.html#services" class="hover:text-amber-700 transition flex items-center gap-1.5 py-2">
+                        Услуги
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 w-72 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="godishen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Годишен хороскоп</a>
+                        <a href="karmichen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп</a>
+                        <a href="karmichen-i-prognoza.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп и прогноза</a>
+                        <a href="partnerski-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Партньорски хороскоп</a>
+                        <a href="horoskop-6-meseca.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Хороскоп за 6 месеца</a>
+                    </div>
+                </div>
+
+                <a href="za-men.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">За мен</a>
+
+                <!-- Падащо меню за Интересно -->
+                <div class="relative group py-4">
+                    <button class="text-amber-700 transition flex items-center gap-1.5 cursor-pointer py-2 font-bold">
+                        Интересно
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 w-64 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="astrologiya.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Астрология</a>
+                        <a href="lubopitno.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Любопитно</a>
+                        <a href="ascedent-i-relokacii.html" class="block px-5 py-3 text-sm text-amber-800 bg-amber-50 transition font-bold">Асцедент и релокации</a>
+                        <a href="tarot.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Карти Таро</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="cart.html" class="relative bg-amber-50 hover:bg-amber-100 text-amber-900 px-4 py-2.5 rounded-full font-semibold text-sm flex items-center space-x-2 transition border border-amber-300 shadow-xs cursor-pointer no-underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span class="hidden sm:inline">Количка</span>
+                    <span id="cart-count-top" class="bg-amber-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+                </a>
+
+                <!-- Бутон за мобилно меню (Бургер) -->
+                <button onclick="toggleMobileMenu()" class="md:hidden bg-amber-50 hover:bg-amber-100 text-amber-900 p-2.5 rounded-full border border-amber-300 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобилно меню (скрито по подразбиране) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-amber-200 px-6 py-4 space-y-3 shadow-lg">
+        <a href="index.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5">Начало</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Услуги:</p>
+            <a href="godishen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Годишен хороскоп</a>
+            <a href="karmichen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп</a>
+            <a href="karmichen-i-prognoza.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп и прогноза</a>
+            <a href="partnerski-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Партньорски хороскоп</a>
+            <a href="horoskop-6-meseca.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Хороскоп за 6 месеца</a>
+        </div>
+        <a href="za-men.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5 border-t border-amber-100 pt-2">За мен</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Интересно:</p>
+            <a href="astrologiya.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Астрология</a>
+            <a href="lubopitno.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Любопитно</a>
+            <a href="ascedent-i-relokacii.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Асцедент и релокации</a>
+            <a href="tarot.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Карти Таро</a>
+        </div>
+    </div>
+
+    <!-- Съдържание на статията -->
+    <main class="flex-grow py-16 px-4 max-w-4xl mx-auto">
+        <article class="bg-white border border-amber-200/80 rounded-3xl p-8 sm:p-12 shadow-xl">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="bg-amber-100 text-amber-800 font-semibold text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-amber-300">Асцедент Близнаци</span>
+                <span class="text-slate-400 text-sm">~ 10 мин четене</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">Асцендент Близнаци в натална карта и при релокация</h1>
+            
+            <div class="h-48 bg-gradient-to-br from-amber-500/10 via-amber-200/20 to-amber-600/10 flex items-center justify-center border border-amber-200 rounded-2xl mb-8">
+                <span class="text-7xl text-amber-700 font-serif">♊</span>
+            </div>
+
+            <div class="prose max-w-none text-slate-600 space-y-6 text-lg leading-relaxed">
+                <p>
+                    Този Асцендент ще ви помогне да се издигнете над нещата, да не приемате нищо чак толкова сериозно или поне винаги да възникват интересни идеи, които ще ви действат позитивно, ще ви показват, че има начин и ако една врата е затворена, то друга ще се отвори. <span class="text-amber-700 font-semibold">Този Асцендент ще усили хладните, безпристрастни и логични съждения.</span> Понеже Близнаци е двойнствен знак – вие ще се научите да виждате една и съща истина по различен начин или различни истини ще са все така приемливи.
+                </p>
+
+                <p>
+                    Асцендентът Близнаци ще усили вашето любопитство, жажда за знания, но само към онези, които действително са ви интересни. Всъщност – вие ще развиете разностранни интереси и ще имате шанс да разгърнете потенциала си поне по два начина, а може и повече. Винаги ще се намират варианти пред вас, а ключът към реализацията на вашите желания ще бъде повишената ви социална активност, общуването с много хора, обменът на идеи – вие ще давате такива и ще срещате подкрепа, ако не от един, то от друг, също така ще се възползвате от предложения, които постоянно ще възникват.
+                </p>
+
+                <p class="bg-amber-50/70 border border-amber-200/80 p-5 rounded-2xl text-slate-700">
+                    Това е много „лек“ Асцендент, който благодарение на бързината на реакциите и съобразителността във всеки един момент успява да превърта предизвикателствата в полза и то почти като на шега, бих казала – на игра. Все пак зодиакалният знак Близнаци се свързва с „младежта“, така че няма да е чудно, ако се ориентирате към по-младежки начин на мислене, възползвате се от подкрепата на по-млади, интелигентни и комуникативни хора, както и самите вие започнете да младеете поради променения ви начин на мислене.
+                </p>
+
+                <p>
+                    Вие можете да изберете този Асцендент, ако искате да усвоите таланта на общуването, създаването и укрепването на връзки, да усилите вашия интелект, да промените вашия начин на мислене, да го обогатите и т.н.
+                </p>
+
+                <p>
+                    Този Асцендент ще ви даде възможност да реализирате себе си чрез натрупани знания и комуникативни умения, а в каква сфера ще се развивате зависи в кой дом ще се намира управителят на Близнаци – Меркурий.
+                </p>
+
+                <h2 class="text-3xl font-bold text-slate-900 pt-6 border-t border-amber-200/60">Меркурий по домове при Асцендент Близнаци</h2>
+
+                <!-- 1 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Меркурий в 1 дом</h3>
+                    <p class="text-slate-600">Определено ще развиете интелекта си, ще наблегнете на повишаването на вашите знания и ораторски умения, ще усъвършенствате начина си на мислене. Чрез вашата повишаваща се бъбривост, висока социална активност, изказване на идеи – вие често ще се превръщате в център на внимание или дебати. Тук опасност се крие във вероятността трудно да приемате мнение, различно от вашето, може да се окаже, че водите по-скоро монолози, отколкото диалози. Все пак е от значение и как е аспектиран Меркурий: ако той е добре аспектиран, тогава вие ще се превръщате в оратор, който е харесван и уважаван от околните, вашите мисли и идеи ще се възприемат с лекота и със съответните ползи. Ако Меркурий е в напрегната аспектация, тогава може да говорите много, но никой да не ви чува, може да превъзнасяте собствения си интелект, но да правите различно от очакваното впечатление.</p>
+                </div>
+
+                <!-- 2 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Меркурий във 2 дом</h3>
+                    <p class="text-slate-600">Възникват доста добри идеи за печалба, които можете да реализирате. Ако Меркурий е добре аспектиран, тогава може да бъдете почти гениални и да правите от „нищо нещо“, да имате отличен спекулативен усет за облагодетелстване. Мисълта ви е точна, практична и критична, вечно насочена към възможността за вид изгода и как от „едно“ да направите поне „две“, а добрата новина е, че може да ви се получи. Вие може да използвате вашия интелект, връзки и комуникативни способности, за да печелите. Това е добро положение за печалба чрез търговия, посредническа дейност, навсякъде, където можете да използвате връзки и съответно убедителност, ораторски умения. Ако Меркурий е в напрегната аспектация, тогава идеите ви по-скоро ще са повод за загуби, също трябва да се научите да страните от връзки, които ви носят щети; това не е добра позиция за работа с финансови документи.</p>
+                </div>
+
+                <!-- 3 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Меркурий в 3 дом</h3>
+                    <p class="text-slate-600">Вие може да се превърнете в център на внимание, животът ви да бъде динамичен, интересен, цветен, изпълнен с множество възможности, промени, предизвикателства, пътувания, смяна на средата и „декорите на живота“. Няма да ви липсват възможности за създаване и укрепване на връзки, а ако Меркурий е добре аспектиран, вие ще можете да реализирате вашия интелект и натрупани знания по оптимално добър начин, ще можете да се сдобиете с популярност, да имате значими успехи при занимания, където се използват ораторски способности, например говорители, посредници, журналисти, писатели и навсякъде другаде, където имате нужните знания. Постоянно ще създавате нови връзки, обменът на информация ще е много висок и със съответните ползи. Ако Меркурий е в напрегнати аспекти, тогава вашите логични съждения могат да ви отведат някъде другаде, а не там, където искате. Трябва внимателно да избирате на кого се доверявате, за да не се разочаровате.</p>
+                </div>
+
+                <!-- 4 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Меркурий в 4 дом</h3>
+                    <p class="text-slate-600">Всички понятия, идеи и разбирания ще са тясно свързани с вашия дом и семейство. Например, преди да вземете каквото и да било решение, вие ще го обсъждате у дома, ще се допитвате до мнението на близките ви хора. Може да имате интересни идеи, които да споделяте у дома и те после да могат да се реализират на практика и да допринесат за благоденствието на семейството ви. В дома ви може да е доста шумно, да каните приятели, роднини, да развивате активна социална дейност от дома си, дори да работите от вкъщи. Това е добра позиция за семеен бизнес, за занимания с недвижимо имущество, земеделие, геология, археология и др. Не е изключено да ви се налага много да пътувате по работа или друго. Ако Меркурий не е добре аспектиран, тогава ще има спорове и недоразумения вкъщи, не е изключено да ескалират нежелани премествания.</p>
+                </div>
+
+                <!-- 5 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Меркурий в 5 дом</h3>
+                    <p class="text-slate-600">Ще водите висока социална активност, ще споделяте творчески идеи, може да разгърнете талант, който притежавате, чрез ораторските си умения, начин на изразяване и мислене, натрупани знания, като получавате подкрепа от околните. Вие може да развиете качества на педагог или общуването с младежта и децата да се превърне в приоритет, полза, удоволствие. Вероятно винаги ще намирате и време за развлечения и удоволствия, ще успявате да спечелите сърцето на любим човек чрез дар словото си. Ако Меркурий е добре аспектиран, тогава вие ще имате много успехи навсякъде, където можете да разгърнете вашия потенциал чрез интелект и начин на мислене, като превърнете ваше хоби в работа. Ще се радвате на много приятни романтични срещи, разговори, създаване на връзки, които ще ви носят полза или удоволствие. Ако Меркурий е в напрегната конфигурация, тогава вашата бъбривост и желание да изпъквате като всезнайко ще отключват точно обратен от очаквания резултат.</p>
+                </div>
+
+                <!-- 6 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Меркурий в 6 дом</h3>
+                    <p class="text-slate-600">Това положение ще ви фокусира върху професионалната ви реализация; най-много шансове ще получавате, ако работата ви е свързана с висока социална активност, общуване с много хора, ако работата ви е интелектуална, включва натрупани знания и комуникативни умения, а може би и движение, тоест заниманията ви не са рутинни. Под това влияние вие може да проявите интерес към здравословен начин на живот, ще се усили любопитството ви към режим на хранене, съвсем рационално може да премахвате от ежедневието си всичко, което е излишно и препятства добрия ви тонус. Ако Меркурий е добре аспектиран – вие ще можете да направите много за здравето си чрез разходки на чист въздух, повече движение и позитивен начин на мислене. Ще имате и добра професионална реализация. Ако Меркурий е в напрегната аспектация, тогава напрегнатата ви нервна система може да има негативен ефект върху здравето и текущите задачи в ежедневието, като минимум ще съществува перманентно напрежение.</p>
+                </div>
+
+                <!-- 7 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Меркурий в 7 дом</h3>
+                    <p class="text-slate-600">Това положение ще ви фокусира върху възможността да се сдобиете с популярност вследствие на ораторските ви способности, натрупани знания и способност да привличате и печелите внимание и одобрение. От друга страна, вашата реализация на различни нива от живота перманентно и подчертано ще зависи и ще се определя от мнението на околните, от тяхната подкрепа. Това положение е добро за популярни хора като артисти, обществено-значими личности, говорители. Ако Меркурий е добре аспектиран – вие ще си намерите сътрудник, който ще се превръща в мост към успехите ви, или партньор, който да ви помага и да играе ролята на опора. Добра позиция за брачни отношения, които се градят на взаимно уважение. Ако Меркурий е в напрегната аспектация – нарушена комуникация с околните изобщо.</p>
+                </div>
+
+                <!-- 8 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Меркурий в 8 дом</h3>
+                    <p class="text-slate-600">Вашите интелектуални способности могат да се имплантират върху възможността да печелите крупни суми и вследствие на подкрепа (финансова или морална) от страна на хора, които могат да повлияят на благосъстоянието ви. Това е добра позиция, ако желаете да използвате умствения си капацитет в силови структури, например полиция, прокуратура, други държавни учреждения, също финансови институции. Ако Меркурий е добре аспектиран, тогава печалбите могат да бъдат над средното ниво, вие ще умеете да се възползвате от скрити, невидими за околните възможности, ще развиете талант да извличате полза от почти всяка ситуация. Ако Меркурий е в напрегната конфигурация, тогава нарушения в общуването ще водят до загуби (морални или материални), могат да се развият фобии и депресивни състояния.</p>
+                </div>
+
+                <!-- 9 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Меркурий в 9 дом</h3>
+                    <p class="text-slate-600">Ще се наблюдават шансове за повишение на квалификацията, признание и уважение към вече придобити знания, а това по един естествен начин ще доведе и до израстване в кариерата. Ще можете да привличате на своя страна високопоставени или интелигентни хора, включително извън близкото ви обкръжение, чужденци, които ще ви помагат да реализирате собствените си честолюбиви планове. Постепенно ще се разшири жаждата за повече знания, интересът към философия, религия и духовно израстване. Това е отлично положение за развитие в академични среди, също за пътувания и реализации зад граница. Ще отключите оптимистични нагласи и винаги ще знаете, че светът не свършва пред носа и погледа ви, а има много още богатства и отвъд хоризонтите. Ще развиете авантюристичен дух, мисленето е по-смело. Ако Меркурий е добре аспектиран – перманентното израстване напред и нагоре е почти гарантирано.</p>
+                </div>
+
+                <!-- 10 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Меркурий в 10 дом</h3>
+                    <p class="text-slate-600">Вашата амбиция и фокус върху по-добър социален статус и кариерно израстване ще ви дърпат напред и нагоре. Вие ще сте силно фокусирани върху идеята да утвърдите авторитета си, да заемете по-престижни обществени позиции и за целта ще използвате връзки, ораторски способности, интелект, убедителност, находчивост и богатство от идеи, които ще възникват вследствие на този устрем. Ако Меркурий е добре аспектиран – успехите са почти гарантирани. При напрегната аспектация – не е изключено съжденията да са нереалистични или липсата на комуникативни умения да се превръща в препъни-камък. Изкачването към върха ще се крепи на проба-грешка, ще е съпътствано от разочарования и вероятно липса на достатъчно подкрепа от околните.</p>
+                </div>
+
+                <!-- 11 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Меркурий в 11 дом</h3>
+                    <p class="text-slate-600">Ще сте силно фокусирани върху необходимостта да създавате и укрепвате връзки, да сте с обществено-значими позиции, да получавате повече подкрепа от страна на колектива, в който съществувате. Ако Меркурий е добре аспектиран, тогава ще се радвате на много приятели, вашето мнение ще се цени високо и действително ще влияе на другите. Това ще е отлична позиция при социално-значими позиции, при собствен бизнес, ако се работи с клиенти, при популярни хора или такива, които заемат управленски постове. Ако Меркурий е в напрегната аспектация, тогава вашето мнение за близкото ви обкръжение постоянно ще се мени в зависимост от разочарования и разминаване с очакванията ви, съответно вашите бъдещи перспективи на развитие ще изглеждат някак несигурни и може да се налага постоянно да променяте средата си.</p>
+                </div>
+
+                <!-- 12 дом -->
+                <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm space-y-2">
+                    <h3 class="text-xl font-bold text-amber-800">Меркурий в 12 дом</h3>
+                    <p class="text-slate-600">Тази позиция ще усили вашия талант, особено в писането и интелектуалната дейност, която изисква задълбочено проучване. Ако желаете да разгърнете таланта си, особено зад граница – това е един отличен вариант. Вие ще развиете усет за задкулисното и невидимото, вашият интерес в тази посока може да се увеличи и да прерасне в желание да научите повече за религия, езотерични науки, духовното и т.н. Интуицията ви също ще расте. Можете да си сътрудничите със социално-значими организации, фондации. Ако Меркурий е добре аспектиран – вие ще имате шанс да осъществите тайна идея, съкровена мечта. При напрегнати аспекти – може да изпитате самота, да ви обземат съмнения, да изпаднете в депресивни състояния, да се почувствате изолирани или неразбрани.</p>
+                </div>
+
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-amber-100 flex items-center justify-between">
+                <a href="ascedent-i-relokacii.html" class="text-amber-700 font-bold hover:underline flex items-center gap-2">
+                    ← Обратно към Асцедент и релокации
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Плаващ бутон за количка долу в дясно -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <button onclick="toggleCartModal()" class="relative bg-amber-600 hover:bg-amber-700 text-white p-4 rounded-full shadow-xl flex items-center justify-center transition cursor-pointer border-2 border-amber-300" title="Отвори количката">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <span id="cart-count-floating" class="absolute -top-1 -right-1 bg-slate-900 text-amber-400 text-xs w-6 h-6 rounded-full font-bold flex items-center justify-center border-2 border-white shadow-xs">0</span>
+    </button>
+</div>
+
+<!-- Страничен панел (Модал / Drawer) за количката -->
+<div id="cart-modal" onclick="handleOutsideClick(event)" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-xs flex justify-end transition-opacity">
+    <!-- Добавихме id="cart-modal-container" на белия панел -->
+    <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between p-6 transform transition-transform translate-x-full" id="cart-modal-content">
+        <div>
+            <div class="flex items-center justify-between pb-4 border-b border-amber-100">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span>🛒</span> Вашата количка
+                </h3>
+                <button onclick="toggleCartModal()" class="text-slate-400 hover:text-slate-700 p-2 rounded-lg cursor-pointer">
+                    ✕
+                </button>
+            </div>
+            
+            <div id="modal-cart-items" class="py-4 space-y-3 overflow-y-auto max-h-[60vh]">
+                <!-- Динамично зареждане -->
+            </div>
+        </div>
+
+        <div class="border-t border-amber-100 pt-4">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-medium text-slate-600">Обща сума:</span>
+                <span id="modal-cart-total" class="text-2xl font-bold text-amber-700">0 €</span>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="toggleCartModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-3 rounded-xl transition cursor-pointer text-sm">
+                    Продължи пазаруването
+                </button>
+                <a href="cart.html" class="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 rounded-xl transition text-center cursor-pointer text-sm shadow-md">
+                    Към количката
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Футър -->
+    <footer class="bg-white border-t border-amber-200/60 py-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 AstroConsult. Всички права запазени.</p>
+    </footer>
+
+    <!-- Общ скрипт за количката -->
+    <script>
+        let cart = [];
+        function updateCartUI() {
+            const count = cart.length;
+            const topEl = document.getElementById('cart-count-top');
+            const floatEl = document.getElementById('cart-count-floating');
+            if(topEl) topEl.innerText = count;
+            if(floatEl) floatEl.innerText = count;
+        }
+        function toggleCart() {
+            if (cart.length === 0) {
+                alert('Количката ви е празна.');
+            } else {
+                let itemsList = cart.map(item => `- ${item.name} (${item.price} лв.)`).join('\n');
+                let total = cart.reduce((sum, item) => sum + item.price, 0);
+                alert(`Вашата количка:\n\n${itemsList}\n\nОбща сума: ${total} лв.`);
+            }
+        }
+    </script>
+    <script>
+    // Обновяване на броячите при зареждане на страницата
+    function updateAllCounters() {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        let count = cartData.length;
+        
+        let topCounter = document.getElementById('cart-count-top');
+        let floatingCounter = document.getElementById('cart-count-floating');
+        
+        if (topCounter) topCounter.innerText = count;
+        if (floatingCounter) floatingCounter.innerText = count;
+    }
+
+    document.addEventListener('DOMContentLoaded', updateAllCounters);
+
+    // Отваряне и затваряне на страничния панел (drawer)
+    function toggleCartModal() {
+        const modal = document.getElementById('cart-modal');
+        const content = document.getElementById('cart-modal-content');
+        
+        if (modal.classList.contains('hidden')) {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('translate-x-full');
+            }, 10);
+            renderModalCartItems();
+        } else {
+            content.classList.add('translate-x-full');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    }
+
+    // Рендване на продуктите вътре в модала
+    function renderModalCartItems() {
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            let container = document.getElementById('modal-cart-items');
+            let totalElement = document.getElementById('modal-cart-total');
+            
+            let total = 0;
+            let htmlContent = ''; // Събираме всичко тук предварително
+
+            if (cartData.length === 0) {
+                htmlContent = '<p class="text-slate-500 text-center py-8 text-sm">Количката ви е празна.</p>';
+            } else {
+                cartData.forEach((item, index) => {
+                    total += Number(item.price);
+                    htmlContent += `
+                        <div class="flex justify-between items-center bg-amber-50/50 border border-amber-100 p-3.5 rounded-xl">
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm">${item.title}</h4>
+                                <span class="text-amber-700 font-bold text-sm">${item.price} €</span>
+                            </div>
+                            <button onclick="event.stopPropagation(); removeItemFromCart(${index})" class="text-red-400 hover:text-red-600 p-1.5 transition cursor-pointer" title="Премахни">
+                                🗑️
+                            </button>
+                        </div>
+                    `;
+                });
+            }
+
+            // Задаваме готовият HTML наведнъж, без да чупим DOM елементите по време на цикъла
+            container.innerHTML = htmlContent;
+            if (totalElement) {
+                totalElement.innerText = total + ' €';
+            }
+        }
+
+    // Премахване на артикул от количката през модала
+    function removeItemFromCart(index) {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        cartData.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartData));
+        updateAllCounters();
+        renderModalCartItems();
+    }
+    // Функция за затваряне при клик извън белия панел
+function handleOutsideClick(event) {
+    const modalContent = document.getElementById('cart-modal-content');
+    
+    // Проверяваме дали кликът е направен директно върху тъмния фон (а не вътре в белия панел)
+    if (!modalContent.contains(event.target)) {
+        toggleCartModal();
+    }
+}
+// Функция за отваряне/затваряне на мобилното меню
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+    } else {
+        menu.classList.add('hidden');
+    }
+}
+</script>
+</body>
+</html>

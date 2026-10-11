@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завършване на поръчка | AstroConsult</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Stripe JavaScript библиотека -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- EmailJS библиотека -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "tHZH0mHOfLvEq3UAs",
+            });
+        })();
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Plus Jakarta Sans', sans-serif; } </style>
+</head>
+<body class="bg-gradient-to-b from-amber-50/40 via-stone-50 to-amber-50/20 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Навигация -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-200/60 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-wider text-amber-700 uppercase flex items-center gap-2">
+                <span class="text-amber-500 text-xl">✦</span> Astro<span class="text-slate-700">Consult</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-10 text-base font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">Начало</a>
+                
+                <div class="relative group py-4">
+                    <a href="index.html#services" class="text-slate-700 hover:text-amber-700 transition flex items-center gap-1.5 py-2">
+                        Услуги
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 w-72 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="godishen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Годишен хороскоп</a>
+                        <a href="karmichen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп</a>
+                        <a href="karmichen-i-prognoza.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп и прогноза</a>
+                        <a href="partnerski-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Партньорски хороскоп</a>
+                        <a href="horoskop-6-meseca.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Хороскоп за 6 месеца</a>
+                    </div>
+                </div>
+
+                <a href="za-men.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">За мен</a>
+
+                <div class="relative group py-4">
+                    <button class="hover:text-amber-700 transition flex items-center gap-1.5 cursor-pointer py-2 font-semibold">
+                        Интересно
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 w-64 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="astrologiya.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Астрология</a>
+                        <a href="lubopitno.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Любопитно</a>
+                        <a href="ascedent-i-relokacii.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Асцедент и релокации</a>
+                        <a href="tarot.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Карти Таро</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="cart.html" class="relative bg-amber-50 hover:bg-amber-100 text-amber-900 px-4 py-2.5 rounded-full font-semibold text-sm flex items-center space-x-2 transition border border-amber-300 shadow-xs cursor-pointer no-underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span class="hidden sm:inline">Количка</span>
+                    <span id="cart-count-top" class="bg-amber-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+                </a>
+
+                <!-- Бутон за мобилно меню (Бургер) -->
+                <button onclick="toggleMobileMenu()" class="md:hidden bg-amber-50 hover:bg-amber-100 text-amber-900 p-2.5 rounded-full border border-amber-300 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобилно меню (скрито по подразбиране) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-amber-200 px-6 py-4 space-y-3 shadow-lg">
+        <a href="index.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5">Начало</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Услуги:</p>
+            <a href="godishen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Годишен хороскоп</a>
+            <a href="karmichen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп</a>
+            <a href="karmichen-i-prognoza.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп и прогноза</a>
+            <a href="partnerski-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Партньорски хороскоп</a>
+            <a href="horoskop-6-meseca.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Хороскоп за 6 месеца</a>
+        </div>
+        <a href="za-men.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5 border-t border-amber-100 pt-2">За мен</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Интересно:</p>
+            <a href="astrologiya.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Астрология</a>
+            <a href="lubopitno.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Любопитно</a>
+            <a href="ascedent-i-relokacii.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Асцедент и релокации</a>
+            <a href="tarot.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Карти Таро</a>
+        </div>
+    </div>
+
+    <!-- Съдържание: Поръчка -->
+    <main class="flex-grow py-16 px-4 max-w-7xl mx-auto w-full">
+        <div class="text-center mb-12">
+            <span class="bg-amber-100 text-amber-800 font-semibold text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-amber-300">Сигурна поръчка</span>
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Финализиране на поръчката</h1>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            
+            <!-- КОЛОНА 1: Информация и условия -->
+            <div class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="text-amber-600">📜</span> Информация и условия
+                </h2>
+
+                <div class="prose text-slate-600 text-sm space-y-4 leading-relaxed bg-amber-50/40 p-5 rounded-2xl border border-amber-100 mb-6">
+                    <p><strong>Как ще получите вашия хороскоп?</strong></p>
+                    <p>След успешно завършване на плащането и обработване на поръчката, астрологичният анализ се изготвя персонално за вас.</p>
+                    <p>Готовият документ се изпраща на посочения от вас имейл адрес в рамките на <strong>24 часа</strong>.</p>
+                    <p class="text-xs text-slate-500">Моля, уверете се, че сте въвели коректни данни за раждане, за да гарантирате максимална точност.</p>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="font-bold text-slate-800 text-sm mb-3">Избрани услуги:</h3>
+                    <div id="checkout-items-summary" class="space-y-2 max-h-40 overflow-y-auto pr-1">
+                        <!-- Динамично зареждане -->
+                    </div>
+                </div>
+
+                <div class="border-t border-amber-100 pt-4">
+                    <div class="flex justify-between items-center text-lg font-bold text-slate-900">
+                        <span>Обща сума:</span>
+                        <span id="checkout-total-price" class="text-amber-700 text-2xl">0 €</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- КОЛОНА 2: Данни на клиента (Запазени отделно от Stripe) -->
+            <div class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="text-amber-600">👤</span> Вашите данни за контакт
+                </h2>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Имена</label>
+                        <input type="text" id="field-name" placeholder="Въведете вашите имена" oninput="saveClientData()" class="w-full px-4 py-3 rounded-xl border border-amber-200 focus:ring-2 focus:ring-amber-500 focus:outline-hidden text-sm bg-amber-50/20">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Имейл адрес</label>
+                        <input type="email" id="field-email" placeholder="yourname@example.com" oninput="saveClientData()" class="w-full px-4 py-3 rounded-xl border border-amber-200 focus:ring-2 focus:ring-amber-500 focus:outline-hidden text-sm bg-amber-50/20">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Дата, час и място на раждане</label>
+                        <textarea rows="3" id="field-birth" placeholder="Напр. 15.05.1990 г., 14:30 ч., гр. София" oninput="saveClientData()" class="w-full px-4 py-3 rounded-xl border border-amber-200 focus:ring-2 focus:ring-amber-500 focus:outline-hidden text-sm bg-amber-50/20"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- КОЛОНА 3: Stripe Embedded Checkout (Официална форма за плащане) -->
+            <div class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="text-amber-600">💳</span> Плащане с карта
+                </h2>
+
+                <div id="empty-cart-warning" class="hidden text-amber-800 bg-amber-50 border border-amber-200 p-4 rounded-2xl text-sm text-center mb-4">
+                    Количката ви е празна. Моля, добавете услуга, за да продължите.
+                </div>
+
+                <!-- Тук Stripe вгражда своята форма и бутон -->
+                <div id="checkout">
+                    <!-- Зарежда се автоматично -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Плаващ бутон за количка долу в дясно -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+        <button onclick="toggleCartModal()" class="relative bg-amber-600 hover:bg-amber-700 text-white p-4 rounded-full shadow-xl flex items-center justify-center transition cursor-pointer border-2 border-amber-300" title="Отвори количката">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span id="cart-count-floating" class="absolute -top-1 -right-1 bg-slate-900 text-amber-400 text-xs w-6 h-6 rounded-full font-bold flex items-center justify-center border-2 border-white shadow-xs">0</span>
+        </button>
+    </div>
+
+    <!-- Страничен панел (Модал / Drawer) за количката -->
+    <div id="cart-modal" onclick="handleOutsideClick(event)" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-xs flex justify-end transition-opacity">
+        <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between p-6 transform transition-transform translate-x-full" id="cart-modal-content">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-amber-100">
+                    <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <span>🛒</span> Вашата количка
+                    </h3>
+                    <button onclick="toggleCartModal()" class="text-slate-400 hover:text-slate-700 p-2 rounded-lg cursor-pointer">
+                        ✕
+                    </button>
+                </div>
+                
+                <div id="modal-cart-items" class="py-4 space-y-3 overflow-y-auto max-h-[60vh]">
+                    <!-- Динамично зареждане -->
+                </div>
+            </div>
+
+            <div class="border-t border-amber-100 pt-4">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="font-medium text-slate-600">Обща сума:</span>
+                    <span id="modal-cart-total" class="text-2xl font-bold text-amber-700">0 €</span>
+                </div>
+                <div class="flex gap-3">
+                    <button onclick="toggleCartModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-3 rounded-xl transition cursor-pointer text-sm">
+                        Продължи пазаруването
+                    </button>
+                    <a href="cart.html" class="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 rounded-xl transition text-center cursor-pointer text-sm shadow-md">
+                        Към плащане
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футър -->
+    <footer class="bg-white border-t border-amber-200/60 py-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 AstroConsult. Всички права запазени.</p>
+    </footer>
+
+    <!-- Скриптове и логика -->
+    <script>
+        let stripe;
+        let checkout;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            loadCheckoutSummary();
+            updateAllCounters();
+            loadSavedClientData();
+
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            let amount = cartData.reduce((sum, i) => sum + Number(i.price), 0);
+
+            if (amount <= 0) {
+                document.getElementById('empty-cart-warning').classList.remove('hidden');
+                return;
+            }
+
+            // Инициализираме Stripe с твоя Publishable Key (замени с твоя истински pk_test_...)
+            stripe = Stripe('pk_test_51UOKtkFxXlHis6p52lMJ7d3kOH4KhvLGHmTzAthp3E2rwlYSPIbW7jKmjygNe3RX6Df9OrMVI37v76QjJdvpDuq200fTddsHbm');
+
+            try {
+                const response = await fetch('/create-checkout-session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ amount: amount })
+                });
+                const data = await response.json();
+
+                if (data.clientSecret) {
+                    checkout = await stripe.initEmbeddedCheckout({
+                        clientSecret: data.clientSecret,
+                    });
+                    checkout.mount('#checkout');
+                }
+            } catch (e) {
+                console.error("Грешка при зареждане на Stripe формата:", e);
+            }
+        });
+
+        // Запазваме данните на клиента в localStorage, за да ги вземе success.html
+        function saveClientData() {
+            const clientData = {
+                name: document.getElementById('field-name').value,
+                email: document.getElementById('field-email').value,
+                birth: document.getElementById('field-birth').value
+            };
+            localStorage.setItem('astropay_client', JSON.stringify(clientData));
+        }
+
+        function loadSavedClientData() {
+            const saved = JSON.parse(localStorage.getItem('astropay_client'));
+            if (saved) {
+                if (document.getElementById('field-name')) document.getElementById('field-name').value = saved.name || '';
+                if (document.getElementById('field-email')) document.getElementById('field-email').value = saved.email || '';
+                if (document.getElementById('field-birth')) document.getElementById('field-birth').value = saved.birth || '';
+            }
+        }
+
+        function updateAllCounters() {
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            let count = cartData.length;
+            let topCounter = document.getElementById('cart-count-top');
+            let floatingCounter = document.getElementById('cart-count-floating');
+            if (topCounter) topCounter.innerText = count;
+            if (floatingCounter) floatingCounter.innerText = count;
+        }
+
+        function loadCheckoutSummary() {
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            let container = document.getElementById('checkout-items-summary');
+            let totalElement = document.getElementById('checkout-total-price');
+
+            if (cartData.length === 0) {
+                container.innerHTML = `<p class="text-slate-400 text-xs py-2">Няма избрани услуги в количката.</p>`;
+                totalElement.innerText = '0 €';
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cartData.map(item => {
+                total += Number(item.price);
+                return `
+                    <div class="flex justify-between items-center text-xs bg-amber-50/50 border border-amber-100 p-2.5 rounded-xl">
+                        <span class="font-semibold text-slate-700">${item.title}</span>
+                        <span class="text-amber-700 font-bold">${item.price} €</span>
+                    </div>
+                `;
+            }).join('');
+
+            totalElement.innerText = total + ' €';
+        }
+
+        function toggleCartModal() {
+            const modal = document.getElementById('cart-modal');
+            const content = document.getElementById('cart-modal-content');
+            
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    content.classList.remove('translate-x-full');
+                }, 10);
+                renderModalCartItems();
+            } else {
+                content.classList.add('translate-x-full');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        function handleOutsideClick(event) {
+            const modalContent = document.getElementById('cart-modal-content');
+            if (!modalContent.contains(event.target)) {
+                toggleCartModal();
+            }
+        }
+
+        function renderModalCartItems() {
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            let container = document.getElementById('modal-cart-items');
+            let totalElement = document.getElementById('modal-cart-total');
+            
+            let total = 0;
+            let htmlContent = ''; // Събираме всичко тук предварително
+
+            if (cartData.length === 0) {
+                htmlContent = '<p class="text-slate-500 text-center py-8 text-sm">Количката ви е празна.</p>';
+            } else {
+                cartData.forEach((item, index) => {
+                    total += Number(item.price);
+                    htmlContent += `
+                        <div class="flex justify-between items-center bg-amber-50/50 border border-amber-100 p-3.5 rounded-xl">
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm">${item.title}</h4>
+                                <span class="text-amber-700 font-bold text-sm">${item.price} €</span>
+                            </div>
+                            <button onclick="event.stopPropagation(); removeItemFromCart(${index})" class="text-red-400 hover:text-red-600 p-1.5 transition cursor-pointer" title="Премахни">
+                                🗑️
+                            </button>
+                        </div>
+                    `;
+                });
+            }
+
+            // Задаваме готовият HTML наведнъж, без да чупим DOM елементите по време на цикъла
+            container.innerHTML = htmlContent;
+            if (totalElement) {
+                totalElement.innerText = total + ' €';
+            }
+        }
+
+        function removeItemFromCart(index) {
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            cartData.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cartData));
+            updateAllCounters();
+            renderModalCartItems();
+            loadCheckoutSummary();
+        }
+
+        // Функция за отваряне/затваряне на мобилното меню
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+    } else {
+        menu.classList.add('hidden');
+    }
+}
+    </script>
+</body>
+</html>

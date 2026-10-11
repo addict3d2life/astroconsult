@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таро-нумерологична система за годишна прогноза | AstroConsult</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-amber-50/40 via-stone-50 to-amber-50/20 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Навигация -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-200/60 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-wider text-amber-700 uppercase flex items-center gap-2">
+                <span class="text-amber-500 text-xl">✦</span> Astro<span class="text-slate-700">Consult</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-10 text-base font-semibold text-slate-700">
+                <a href="index.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">Начало</a>
+                
+                <!-- Падащо меню за Услуги -->
+                <div class="relative group py-4">
+                    <a href="index.html#services" class="hover:text-amber-700 transition flex items-center gap-1.5 py-2">
+                        Услуги
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-0 w-72 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="godishen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Годишен хороскоп</a>
+                        <a href="karmichen-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп</a>
+                        <a href="karmichen-i-prognoza.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Кармичен хороскоп и прогноза</a>
+                        <a href="partnerski-horoskop.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Партньорски хороскоп</a>
+                        <a href="horoskop-6-meseca.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Хороскоп за 6 месеца</a>
+                    </div>
+                </div>
+
+                <a href="za-men.html" class="hover:text-amber-700 transition py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all">За мен</a>
+
+                <!-- Падащо меню за Интересно -->
+                <div class="relative group py-4">
+                    <button class="text-amber-700 transition flex items-center gap-1.5 cursor-pointer py-2 font-bold">
+                        Интересно
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-600 group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-0 w-64 bg-white border border-amber-200 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <a href="astrologiya.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Астрология</a>
+                        <a href="lubopitno.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Любопитно</a>
+                        <a href="ascedent-i-relokacii.html" class="block px-5 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-800 transition font-medium">Асцедент и релокации</a>
+                        <a href="tarot.html" class="block px-5 py-3 text-sm text-amber-800 bg-amber-50 transition font-bold">Карти Таро</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="cart.html" class="relative bg-amber-50 hover:bg-amber-100 text-amber-900 px-4 py-2.5 rounded-full font-semibold text-sm flex items-center space-x-2 transition border border-amber-300 shadow-xs cursor-pointer no-underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span class="hidden sm:inline">Количка</span>
+                    <span id="cart-count-top" class="bg-amber-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+                </a>
+
+                <!-- Бутон за мобилно меню (Бургер) -->
+                <button onclick="toggleMobileMenu()" class="md:hidden bg-amber-50 hover:bg-amber-100 text-amber-900 p-2.5 rounded-full border border-amber-300 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобилно меню (скрито по подразбиране) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-amber-200 px-6 py-4 space-y-3 shadow-lg">
+        <a href="index.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5">Начало</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Услуги:</p>
+            <a href="godishen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Годишен хороскоп</a>
+            <a href="karmichen-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп</a>
+            <a href="karmichen-i-prognoza.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Кармичен хороскоп и прогноза</a>
+            <a href="partnerski-horoskop.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Партньорски хороскоп</a>
+            <a href="horoskop-6-meseca.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Хороскоп за 6 месеца</a>
+        </div>
+        <a href="za-men.html" class="block font-medium text-slate-700 hover:text-amber-700 py-1.5 border-t border-amber-100 pt-2">За мен</a>
+        <div class="border-t border-amber-100 pt-2">
+            <p class="text-xs font-bold text-amber-800 uppercase mb-1">Интересно:</p>
+            <a href="astrologiya.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Астрология</a>
+            <a href="lubopitno.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Любопитно</a>
+            <a href="ascedent-i-relokacii.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Асцедент и релокации</a>
+            <a href="tarot.html" class="block pl-3 py-1 text-sm text-slate-600 hover:text-amber-700">• Карти Таро</a>
+        </div>
+    </div>
+
+    <!-- Основно съдържание -->
+    <main class="flex-grow py-16 px-4 max-w-4xl mx-auto">
+        
+        <!-- Връзка назад -->
+        <div class="mb-8">
+            <a href="tarot.html" class="inline-flex items-center gap-2 text-sm font-semibold text-amber-700 hover:text-amber-800 transition">
+                ← Към всички Таро разчитания
+            </a>
+        </div>
+
+        <!-- Заглавна част -->
+        <div class="text-center space-y-6 mb-12">
+            <span class="bg-amber-100 text-amber-900 font-semibold text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-amber-300 shadow-xs">Нумерологична Прогноза</span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">Таро-нумерологична система за годишна прогноза</h1>
+            
+            <div class="max-w-2xl mx-auto text-slate-600 space-y-3 text-base sm:text-lg leading-relaxed pt-2">
+                <p>Изчисленията за Таро-нумерологичната прогноза се извършват, като към навършените си години прибавяте самата година, през която сте ги навършили.</p>
+                <p class="text-amber-800 font-medium">Пример: ако сте навършили 30 години през 2016 година, тогава сумирате 30 + 2016 = 2046 = 2+0+4+6 = 12 (най-голямото число може да бъде 22).</p>
+            </div>
+        </div>
+
+        <!-- ИНТЕРАКТИВЕН КАЛКУЛАТОР -->
+        <div class="bg-white border border-amber-300 rounded-3xl p-6 sm:p-8 shadow-md mb-16">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4 text-center">Изчислете вашата лична Таро година</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Навършени години:</label>
+                    <input type="number" id="calc-age" placeholder="напр. 35" class="w-full px-4 py-3 border border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 bg-amber-50/30 text-slate-900">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Година на навършване:</label>
+                    <input type="number" id="calc-year" placeholder="напр. 2026" class="w-full px-4 py-3 border border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 bg-amber-50/30 text-slate-900">
+                </div>
+            </div>
+            <button onclick="calculateTarotYear()" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3.5 rounded-xl transition shadow-md cursor-pointer">
+                Изчисли моята карта за годината
+            </button>
+            <div id="calc-result" class="mt-6 hidden p-5 bg-amber-50/80 border border-amber-300 rounded-2xl text-center text-slate-800 font-medium">
+                <!-- Тук се показва резултатът -->
+            </div>
+        </div>
+
+        <hr class="border-amber-200 my-12">
+
+        <!-- СПИСЪК С АРКАНИТЕ ОТ 0 ДО 21 -->
+        <div class="space-y-12">
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-8">Значения на картите от 0 до 21</h2>
+
+            <!-- 0 / 22 -->
+            <article id="card-0" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">0 / 22</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Шут (Шутовска карта)</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява веселяк, който е на ръба на пропаст и се колебае дали да направи още една крачка напред. Означава любопитство, изкушения, заради които могат да се направят грешки. Символизира още, че можете да тръгнете по съвсем друг път на развитие, водени свише, поради стечение на обстоятелствата, среща със Съдбата.
+                </p>
+            </article>
+
+            <!-- 1 -->
+            <article id="card-1" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">1</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Магьосникът</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява млад мъж, който е вдигнал дясната си ръка нагоре и държи жезъл в нея, а лявата сочи надолу. Означава, че е дошло време да получите Силните Дарове на Духа, като си проправяте път със собствената си воля и предназначение. Сами градите бъдещето си, имате известна свобода в рамките на потенциала си, който най-добре се развива, разгръща и проправя бъдещи перспективи в този период. Символизира още – действие, инициатива, ловкост, придобиване на авторитет, лидерство, откъсване от зависимости.
+                </p>
+            </article>
+
+            <!-- 2 -->
+            <article id="card-2" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">2</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Жрицата</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява жрица, която има в краката си лунен сърп, а на главата си корона с рога, между които е разположена сфера. Означава, че втори шанс се дава благодарение на онова, което произтича от сърцето ви, прозиране на истини, като използвате интуицията си. В живота остава онова, в което има „любов, хляб и сигурност”. Понякога – житейски кръстопът, необходимост да стабилизирате позициите си чрез сътрудничество. Означава още – тайна, съмнения, неяснота, неопределеност.
+                </p>
+            </article>
+
+            <!-- 3 -->
+            <article id="card-3" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">3</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Императрицата</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява величествена фигура на жена, богато облечена, като дъщеря на небето и земята. Означава шанс, късмет за изобилие. Символизира още жизнена сила на „крилете на силни желания. Разкрепостеност, трудностите по-лесно се преодоляват.”
+                </p>
+            </article>
+
+            <!-- 4 -->
+            <article id="card-4" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">4</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Императорът</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява монарх, който в едната си ръка държи жезъл „Анкх”, а в другата сфера. Означава власт, сила, че е дошло време, през което вашето положение се свързва с възможности, но и много големи отговорности, вие определяте своето благоденствие, но и това на близките си хора. Означава още стабилност, при която промените са свързани с големи рискове, също – ясни цели, практичност.
+                </p>
+            </article>
+
+            <!-- 5 -->
+            <article id="card-5" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">5</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Жрецът</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява жрец с тройна корона, седнал между две колони. Означава всички неща, които са праведни и свещени откъм видимата страна, шанс да отключите късмета си с помощта на висшите сили. Този период ви носи ценно знание, свързва ви с хора, носещи успех и щастие в живота ви, променя начина ви на мислене, чрез общуване, промяна на средата, в посока – прозорливост, вяра, доверие, разбиране.
+                </p>
+            </article>
+
+            <!-- 6 -->
+            <article id="card-6" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">6</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Влюбените</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    В предната част на фигурата има две голи женски фигури изправени една срещу друга, както Адам и Ева. В повечето случаи този период се свързва със среща с любовта, но може да означава още раздвояване между две силни желания, избор в чувствата, който не винаги е лек или е свързан с жертва. Допълнително значение – изкушения, силна страст, късмет в любовта, среща с голяма любов.
+                </p>
+            </article>
+
+            <!-- 7 -->
+            <article id="card-7" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">7</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Колесницата</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява господарска фигура, носеща меч, която се вози в колесница теглена от два сфинкса. Означава период, през който преодолявате предизвикателства, справяте се с трудности като се борите, проправяте си път в живота и успявате, като стигате далеч, но благодарение на проявена смелост и готовност да отстранявате врагове и препятствия.
+                </p>
+            </article>
+
+            <!-- 8 -->
+            <article id="card-8" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">8</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Силата</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява жена, която затваря челюстите на Лъва. Означава период, през който можем да придобием надмощие над природата, но с търпение, смелост, тактика и уважение към чуждия авторитет. През това време не очаквайте бързо развитие, ще трябва да си проправяте път с много усилия и в повечето случаи ще се изправите пред задържания. Не е подходящо да се започват нови начинания или те въобще не се случват. В личните отношения указва ситуации, в които се налага да правите компромиси със себе си в името на това всичко да върви гладко.
+                </p>
+            </article>
+
+            <!-- 9 -->
+            <article id="card-9" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">9</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Отшелникът</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява мъдрец, който си осветява сам пътя с лампа, в която свети звезда. Указва година, през която се обръщате към себе си, осмисляте натрупания опит и той се превръща в безценна духовна сила, която показва пътя ви. Означава още период, през който може да се чувствате самотни, неразбрани, в който имате нужда да спре, да се отдалечи от другите, за да си „презареди батериите” и да си проясни главата. Интересното е, че през това време, можете да се окажете на кръстопът, когато трябва да вземете важни решения, но като разчитате предимно на себе си, а не на другите поради различни житейски обстоятелства.
+                </p>
+            </article>
+
+            <!-- 10 -->
+            <article id="card-10" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">10</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Колелото на съдбата</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява колело, на което са изписани транслитерацията на таро, редуващи се с буквите на Божието Име. Важно за схващането на тази карта, освен принципът на цикличността, е и фактът, че „понякога нещата не зависят от нас и не се случват, когато ние ги очакваме.” Ако следваме ритъма на Колелото, се чувстваме удовлетворени и сякаш сме избрали пътя с най-малко съпротивление, но ако въпреки всичко настояваме на своето и не сме готови да се примирим, всичко се случва трудно и имаме усещането, че някой непрекъснато работи срещу нас. Този някой всъщност сме самите ние. Означава още – успех, щастливо стечение на обстоятелствата.
+                </p>
+            </article>
+
+            <!-- 11 -->
+            <article id="card-11" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">11</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Справедливост</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява фигура, която е седнала между две колони, в ръката си държи меч. Означава духовна справедливост, която се поражда от безпристрастно отношение. Това е време, когато сами можем да раздадем справедливост, защото сме се откъснали от емоционални зависимости или под външен натиск, който ни подтиква в тази посока. Това е период, през който се „проверяват” всички връзки, проявява се чувството на справедливост, като се водим от собствен морален кодекс. Понякога може да означава буквално съдебни дела, протичащи сложно, но със заслужени развръзки. В други случаи – това е „проверка” на взаимоотношенията (лични и делови), „наместват” се пластове във връзки, всеки си получава заслуженото.
+                </p>
+            </article>
+
+            <!-- 12 -->
+            <article id="card-12" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">12</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Провесеният</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата символизира фигура, която е обесена с главата надолу, а на пръв поглед изглежда спокойна. Символизира период, през който можем да изпитаме поврат във всички области от живота, най-малкото да променим ценностната си система, под влияние на външни фактори. Това е време, през което трябва да престанем да мислим чрез Егото си, да помислим за спасението на душата си – буквално или в преносен смисъл. Липсата на подобни нагласи отключва изпитания на различни нива, включително и физически.
+                </p>
+            </article>
+
+            <!-- 13 -->
+            <article id="card-13" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">13</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Смъртта</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява косач, косящ човешки глави. Тълкованието не е толкова страшно, колкото изглежда на пръв поглед и означава, че за да „поникне” нещо ново, трябва да се откажем от нещо старо и то често се случва благодарение на собствените ни желания, решения и не толкова под външен натиск. Основно тълкувание – кардинална промяна, продуцирана от нов начин на мислене. Също – след окончателен край, предстои „прераждане”…
+                </p>
+            </article>
+
+            <!-- 14 -->
+            <article id="card-14" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">14</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Умереността</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата символизира ангел с крила, който прелива течности от една чаша в друга. Означава период, през който можем да търсим баланс между две на пръв поглед напълно несъвместими идеи, приоритети в живота, също компромис в името на щастливото бъдеще. Може да символизира още – „Смесването” в един метафоричен смисъл, който води до появата на ново начало, комбинация на различни приоритети, произтичащи от вас самите, обединяване на житейски условия и/или хора от вашето минало. Също – любов, разбиране, изцеление, пътуване.
+                </p>
+            </article>
+
+            <!-- 15 -->
+            <article id="card-15" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">15</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Дяволът</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата символизира рогатия козел от Мендес с крила на прилеп, стоящ върху олтар. Означава период, през който може да злоупотребите със своята сила, да проявите нечестност, да се подадете на изкушения, но също да станете жертва на собствените си демони или чужда нечестност. „Дяволът, освен всичко друго, е материална карта, най-материалната от всички в колодата.” Материята или тялото ни често ни подтикват към неща, които духът ни осъжда като неуместни или неправилни – имаме нагон, с който се борим, глад, който може да се превърне в лакомия, склонност да искаме пари, а понякога да трупаме алчно още и още. Но точно в това е ключът, тялото ни да е задоволено в потребностите си, без да се отива в другата крайност и да се отдаваме изцяло на преследването на тези материални блага. Защото животът ни ще е невъзможен, ако напълно игнорираме материята, все пак аскетизмът е също толкова полярно явление, колкото и затъването в лукс и себеугаждане.
+                </p>
+            </article>
+
+            <!-- 16 -->
+            <article id="card-16" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">16</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Кулата</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява царска фигура, която се изкачва на кула, а тя е ударена от гръм. Означава, че в живота е дошло време за промени, които в повечето случаи са продуцирани от криза, когато трябва да осъзнаем своите грешки, а и да платим за тях. Основното послание е, че никой, дори и „царската фигура” не е застрашен от обрати и колкото е по-голямо егото, толкова по-отвисоко може да се падне. Кулата се свързва с внезапни трансформации, смяна на жизнени етапи, но понякога те могат да имат положително следствие, дори и да е принудително. Например не водим здравословен начин на живот, обвързани сме с неподходящ човек, не сме поели в подходяща посока по отношение на професионалната си реализация, не даваме всичко от себе си, спрели сме да се развиваме и т.н. Така Съдбата ни поставя в условия, когато статуквото не може да бъде съхранено…
+                </p>
+            </article>
+
+            <!-- 17 -->
+            <article id="card-17" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">17</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Звезда</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Гола женска фигура, преведена над ручей, над нея блести голяма звезда с осем лъча. Означава период, който основно се свързва с възраждането на надеждата по различни поводи. Можем да усетим, че сме закриляни от Съдбата, да намерим себе си, вътрешно спокойствие, прозрения, увереност, просветление по жизнения път. Свързва се още с новото начало и вярата, че сме избрали най-правилните решения за своето бъдеще, че „след най-тъмната нощ, идва най-светлият ден”. Може да означава изцеление – духовно, физическо…
+                </p>
+            </article>
+
+            <!-- 18 -->
+            <article id="card-18" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">18</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Луната</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява гладно куче и вълк, които гледат към Луната, от която капят капки кръв. Означава борба между духовното и материалното, поставящо на изпитание вярата. През това време можем да изпитаме съмнения и страхове, които се пораждат от несигурност, а това което ни крепи е правилната морална ориентация, привързаност към базисни ценности – загриженост за ближния например, осъзнаване, че никой не е щастлив, ако е сам. Ние можем да успяваме, но не без Божията благословия или съгласието на другите. Свързва се също с време, през което трябва да наваксаме с пропуски от миналото, да се справяме с конкуренция и силни врагове. Още – силна интуиция, емоционален период, през който можем и трябва да намерим общ език с околните, в името на доброто бъдеще.
+                </p>
+            </article>
+
+            <!-- 19 -->
+            <article id="card-19" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">19</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Слънцето</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява дете възседнало бял кон, а зад него грее усмихнатото Слънце. Това е един от най-щастливите периоди, когато се възраждат жизнените сили, получаваме награда за всички положени в миналото усилия, притежаваме шанс и сили да се справяме с всички предизвикателства. Годината е изпълнена с късмет, големи амбиции, планове, ново начало, носещо радост и обновление. Това може да е зенит в нашия живот, когато следва да сме максимално инициативни, за да се възползваме от всички блага и възможности…
+                </p>
+            </article>
+
+            <!-- 20 -->
+            <article id="card-20" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">20</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Прераждане / Съд</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява майка, баща и дете, които се изправят от гроба, а над тях ангел свири на тромпет. Може и да звучи леко зловещо, но всъщност тълкованието е много положително и означава освобождаване от догми, тежки минали обстоятелства и начин на съществуване. През тази година можем да извършим забележителна духовна трансформация, все едно се прераждаме. Означава още – втори шанс, оставяне на всичко старо и обременяващо безвъзвратно в миналото…
+                </p>
+            </article>
+
+            <!-- 21 -->
+            <article id="card-21" class="bg-white border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 font-serif font-bold text-lg px-4 py-2 rounded-xl">21</span>
+                    <h3 class="text-2xl font-bold text-slate-900">Светът</h3>
+                </div>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Картата изобразява гола женска фигура, която преминава през венец. Това е период, през който преминаваме от един житейски цикъл в друг, но не насилствено, а напротив, като нормално следствие по пътя на собственото ни развитие. Означава още – щастлива развръзка. Например, това може да е време, през което получаваме своята диплома и продължаваме напред с професионалната си реализация, пораснали сме и се отделяме от семейството си, решаваме да пътуваме, за да опознаем света и намерим най-правилното място за себе си…
+                </p>
+            </article>
+
+        </div>
+
+    </main>
+
+    <!-- Плаващ бутон за количка долу в дясно -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <button onclick="toggleCartModal()" class="relative bg-amber-600 hover:bg-amber-700 text-white p-4 rounded-full shadow-xl flex items-center justify-center transition cursor-pointer border-2 border-amber-300" title="Отвори количката">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <span id="cart-count-floating" class="absolute -top-1 -right-1 bg-slate-900 text-amber-400 text-xs w-6 h-6 rounded-full font-bold flex items-center justify-center border-2 border-white shadow-xs">0</span>
+    </button>
+</div>
+
+<!-- Страничен панел (Модал / Drawer) за количката -->
+<div id="cart-modal" onclick="handleOutsideClick(event)" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-xs flex justify-end transition-opacity">
+    <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between p-6 transform transition-transform translate-x-full" id="cart-modal-content">
+        <div>
+            <div class="flex items-center justify-between pb-4 border-b border-amber-100">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span>🛒</span> Вашата количка
+                </h3>
+                <button onclick="toggleCartModal()" class="text-slate-400 hover:text-slate-700 p-2 rounded-lg cursor-pointer">
+                    ✕
+                </button>
+            </div>
+            
+            <div id="modal-cart-items" class="py-4 space-y-3 overflow-y-auto max-h-[60vh]">
+                <!-- Динамично зареждане -->
+            </div>
+        </div>
+
+        <div class="border-t border-amber-100 pt-4">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-medium text-slate-600">Обща сума:</span>
+                <span id="modal-cart-total" class="text-2xl font-bold text-amber-700">0 €</span>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="toggleCartModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-3 rounded-xl transition cursor-pointer text-sm">
+                    Продължи пазаруването
+                </button>
+                <a href="cart.html" class="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 rounded-xl transition text-center cursor-pointer text-sm shadow-md">
+                    Към количката
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Футър -->
+    <footer class="bg-white border-t border-amber-200/60 py-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 AstroConsult. Всички права запазени.</p>
+    </footer>
+
+    <!-- Скриптове за калкулатора и количката -->
+    <script>
+        function calculateTarotYear() {
+            const ageInput = document.getElementById('calc-age').value;
+            const yearInput = document.getElementById('calc-year').value;
+            const resultBox = document.getElementById('calc-result');
+
+            if (!ageInput || !yearInput) {
+                alert('Моля, въведете и навършените години, и годината!');
+                return;
+            }
+
+            const age = parseInt(ageInput);
+            const year = parseInt(yearInput);
+            const rawSum = age + year;
+
+            // Намаляване докато стане <= 22 или сумиране на цифрите според метода
+            // (В примера: 30 + 2016 = 2046 => 2+0+4+6 = 12)
+            let sumStr = rawSum.toString();
+            let reducedSum = sumStr.split('').reduce((acc, digit) => acc + parseInt(digit), 0);
+
+            // Ако е над 22, редуцираме пак цифрово или проверяваме
+            if (reducedSum > 22) {
+                let subStr = reducedSum.toString();
+                reducedSum = subStr.split('').reduce((acc, digit) => acc + parseInt(digit), 0);
+            }
+
+            resultBox.classList.remove('hidden');
+            resultBox.innerHTML = `Резултат: <strong>${age} + ${year} = ${rawSum}</strong> (сбор на цифрите: ${reducedSum}).<br>Вашата карта за годината е <strong>№ ${reducedSum}</strong>! Можете да я намерите в списъка по-долу.`;
+            
+            // Превъртане към съответната карта ако съществува в DOM
+            const targetCard = document.getElementById('card-' + reducedSum);
+            if (targetCard) {
+                targetCard.scrollIntoView({ behavior: 'smooth' });
+                targetCard.classList.add('ring-2', 'ring-amber-500');
+                setTimeout(() => targetCard.classList.remove('ring-2', 'ring-amber-500'), 3000);
+            }
+        }
+
+        let cart = [];
+        function updateCartUI() {
+            const count = cart.length;
+            const topEl = document.getElementById('cart-count-top');
+            const floatEl = document.getElementById('cart-count-floating');
+            if(topEl) topEl.innerText = count;
+            if(floatEl) floatEl.innerText = count;
+        }
+        function toggleCart() {
+            if (cart.length === 0) {
+                alert('Количката ви е празна.');
+            } else {
+                let itemsList = cart.map(item => `- ${item.name} (${item.price} лв.)`).join('\n');
+                let total = cart.reduce((sum, item) => sum + item.price, 0);
+                alert(`Вашата количка:\n\n${itemsList}\n\nОбща сума: ${total} лв.`);
+            }
+        }
+    </script>
+    <script>
+    // Обновяване на броячите при зареждане на страницата
+    function updateAllCounters() {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        let count = cartData.length;
+        
+        let topCounter = document.getElementById('cart-count-top');
+        let floatingCounter = document.getElementById('cart-count-floating');
+        
+        if (topCounter) topCounter.innerText = count;
+        if (floatingCounter) floatingCounter.innerText = count;
+    }
+
+    document.addEventListener('DOMContentLoaded', updateAllCounters);
+
+    // Отваряне и затваряне на страничния панел (drawer)
+    function toggleCartModal() {
+        const modal = document.getElementById('cart-modal');
+        const content = document.getElementById('cart-modal-content');
+        
+        if (modal.classList.contains('hidden')) {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('translate-x-full');
+            }, 10);
+            renderModalCartItems();
+        } else {
+            content.classList.add('translate-x-full');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    }
+
+    // Рендване на продуктите вътре в модала
+    function renderModalCartItems() {
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            let container = document.getElementById('modal-cart-items');
+            let totalElement = document.getElementById('modal-cart-total');
+            
+            let total = 0;
+            let htmlContent = ''; // Събираме всичко тук предварително
+
+            if (cartData.length === 0) {
+                htmlContent = '<p class="text-slate-500 text-center py-8 text-sm">Количката ви е празна.</p>';
+            } else {
+                cartData.forEach((item, index) => {
+                    total += Number(item.price);
+                    htmlContent += `
+                        <div class="flex justify-between items-center bg-amber-50/50 border border-amber-100 p-3.5 rounded-xl">
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm">${item.title}</h4>
+                                <span class="text-amber-700 font-bold text-sm">${item.price} €</span>
+                            </div>
+                            <button onclick="event.stopPropagation(); removeItemFromCart(${index})" class="text-red-400 hover:text-red-600 p-1.5 transition cursor-pointer" title="Премахни">
+                                🗑️
+                            </button>
+                        </div>
+                    `;
+                });
+            }
+
+            // Задаваме готовият HTML наведнъж, без да чупим DOM елементите по време на цикъла
+            container.innerHTML = htmlContent;
+            if (totalElement) {
+                totalElement.innerText = total + ' €';
+            }
+        }
+
+    // Премахване на артикул от количката през модала
+    function removeItemFromCart(index) {
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        cartData.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartData));
+        updateAllCounters();
+        renderModalCartItems();
+    }
+    // Функция за затваряне при клик извън белия панел
+function handleOutsideClick(event) {
+    const modalContent = document.getElementById('cart-modal-content');
+    
+    // Проверяваме дали кликът е направен директно върху тъмния фон (а не вътре в белия панел)
+    if (!modalContent.contains(event.target)) {
+        toggleCartModal();
+    }
+}
+// Функция за отваряне/затваряне на мобилното меню
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+    } else {
+        menu.classList.add('hidden');
+    }
+}
+</script>
+</body>
+</html>
