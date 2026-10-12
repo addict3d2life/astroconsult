@@ -47,6 +47,13 @@ app.post('/create-checkout-session', async (req, res) => {
     }
 });
 
-// Динамичен порт за Render или локално тестване на порт 3000
+// Динамичен порт за локално тестване или други платформи (като Render)
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Сървърът работи на порт ${PORT}`));
+
+// Ако сме локално, пускаме app.listen. Ако сме във Vercel, НЕ го пускаме, а само експортираме app!
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+    app.listen(PORT, () => console.log(`Сървърът работи на порт ${PORT}`));
+}
+
+// Задължително за Vercel Serverless Functions:
+module.exports = app;
