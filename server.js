@@ -8,6 +8,10 @@ app.use(express.static('.'));
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
 app.post('/create-checkout-session', async (req, res) => {
     try {
         const { amount } = req.body;
