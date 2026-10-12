@@ -1,17 +1,15 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const app = express();
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-app.use(express.static('.'));
 app.use(express.json());
 app.use(cors());
 
-// Изричен рут за началната страница
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-});
+// Автоматично сервиране на статични файлове от текущата папка
+app.use(express.static(path.join(__dirname, '.')));
 
 app.post('/create-checkout-session', async (req, res) => {
     try {
@@ -22,7 +20,6 @@ app.post('/create-checkout-session', async (req, res) => {
             return res.status(400).json({ error: 'Невалидна сума' });
         }
 
-        // Динамично определяме протокола и домейна
         const protocol = req.headers['x-forwarded-proto'] || req.protocol;
         const host = req.get('host');
         const currentDomain = `${protocol}://${host}`;
