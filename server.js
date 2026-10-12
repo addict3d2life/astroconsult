@@ -1,15 +1,11 @@
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
 const app = express();
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 app.use(express.json());
 app.use(cors());
-
-// Автоматично сервиране на статични файлове от текущата папка
-app.use(express.static(path.join(__dirname, '.')));
 
 app.post('/create-checkout-session', async (req, res) => {
     try {
