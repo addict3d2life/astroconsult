@@ -1,9 +1,12 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const app = express();
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
+// Използваме path.join за сигурен път в Vercel средата
+app.use(express.static(path.join(__dirname, '.')));
 app.use(express.json());
 app.use(cors());
 
