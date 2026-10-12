@@ -1,13 +1,18 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["*.html", "*.css", "*.js"]
+      }
+    }
+  ],
   "routes": [
     {
-      "src": "/create-checkout-session",
-      "dest": "server.js"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "server.js"
     }
   ]
 }
