@@ -8,8 +8,10 @@ app.use(express.static('.'));
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+app.get('/:page', (req, res) => {
+    const page = req.params.page;
+    // Проверяваме дали файлът съществува или просто го пращаме директно
+    res.sendFile(__dirname + '/' + page);
 });
 
 app.post('/create-checkout-session', async (req, res) => {
