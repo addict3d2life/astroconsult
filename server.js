@@ -8,10 +8,9 @@ app.use(express.static('.'));
 app.use(express.json());
 app.use(cors());
 
-app.get('/:page', (req, res) => {
-    const page = req.params.page;
-    // Проверяваме дали файлът съществува или просто го пращаме директно
-    res.sendFile(__dirname + '/' + page);
+// Изричен рут за началната страница
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
 });
 
 app.post('/create-checkout-session', async (req, res) => {
@@ -23,7 +22,7 @@ app.post('/create-checkout-session', async (req, res) => {
             return res.status(400).json({ error: 'Невалидна сума' });
         }
 
-        // Динамично определяме протокола и домейна (работи и на локал, и на Render)
+        // Динамично определяме протокола и домейна
         const protocol = req.headers['x-forwarded-proto'] || req.protocol;
         const host = req.get('host');
         const currentDomain = `${protocol}://${host}`;
@@ -53,13 +52,11 @@ app.post('/create-checkout-session', async (req, res) => {
     }
 });
 
-// Динамичен порт за локално тестване или други платформи (като Render)
+// Динамичен порт за локално тестване
 const PORT = process.env.PORT || 3000;
 
-// Ако сме локално, пускаме app.listen. Ако сме във Vercel, НЕ го пускаме, а само експортираме app!
 if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
     app.listen(PORT, () => console.log(`Сървърът работи на порт ${PORT}`));
 }
 
-// Задължително за Vercel Serverless Functions:
 module.exports = app;
