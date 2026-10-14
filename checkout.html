@@ -254,7 +254,7 @@
             }
 
             // Инициализираме Stripe с твоя Publishable Key (замени с твоя истински pk_test_...)
-            stripe = Stripe('pk_test_51UOKtkFxXlHis6p52lMJ7d3kOH4KhvLGHmTzAthp3E2rwlYSPIbW7jKmjygNe3RX6Df9OrMVI37v76QjJdvpDuq200fTddsHbm');
+            stripe = Stripe('pk_live_51UOKtZFgBlN38pgMlormgwJyEPddYBjMHgYJySkUqOUB4OEsKl7mxkLhJe1LCBDeZXY2QMc5WPyLTfpAsqsDxC8D00OgqWjqPC');
 
             try {
                 const response = await fetch('/create-checkout-session', {
